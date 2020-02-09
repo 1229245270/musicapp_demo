@@ -26,7 +26,19 @@
     <last-search-timestamp>1572253632971</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e18f1378-b634-47ff-9aec-11d91e9441c6" name="Default Changelist" comment="" />
+    <list default="true" id="e18f1378-b634-47ff-9aec-11d91e9441c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/drawlayout_settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/include_default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/include_menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/include_pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/include_play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/include_playnext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layouts/fragment/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,27 +70,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="369">
+              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layouts/include/layout/include_music_bar.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="150">
+              <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layouts/fragment/values/attrs.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+            <state relative-caret-position="44">
+              <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -89,10 +129,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -107,11 +147,12 @@
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen_rankSong.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Service/ServiceUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_me_danqu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/DateBase/Data.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/Song.java" />
@@ -140,7 +181,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/MenuItemModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/MenuItemLayout.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/include_musicbar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_dialog.xml" />
@@ -159,24 +199,28 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_listener_circle.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_listen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layouts/fragment/values/attrs.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layouts/include/layout/include_music_bar.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="101" />
-    <option name="y" value="55" />
+    <option name="x" value="259" />
+    <option name="y" value="85" />
     <option name="width" value="1655" />
     <option name="height" value="955" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -198,6 +242,13 @@
             <path>
               <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="musicapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -214,12 +265,19 @@
             </path>
             <path>
               <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,6 +320,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,11 +338,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\anim" />
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\wwwhzc\MusicApp\app\src\main\res\drawable" />
+      <recent name="E:\androidApp\MusicApp\app\src\main\res\drawable" />
       <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable" />
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable-v24" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\values" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\layout" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.musicapp" />
@@ -292,14 +352,14 @@
       <recent name="com.example.musicapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.musicapp.Module" />
       <recent name="com.example.musicapp.Model" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\androidApp\MusicApp\app\src\main\res\drawable" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\anim" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res" />
       <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable" />
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\values" />
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\layout" />
-      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\java\com\example\musicapp\Module" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable-v24" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -529,7 +589,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="101" y="55" width="1655" height="955" extended-state="0" />
+    <frame x="259" y="85" width="1655" height="955" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
@@ -539,7 +599,7 @@
       <window_info id="Build Variants" order="4" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Resources Explorer" order="6" weight="0.3297587" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4970588" visible="true" weight="0.20564264" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.4970588" visible="true" weight="0.20564264" />
       <window_info id="Captures" order="8" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
       <window_info anchor="bottom" x="200" y="645" width="1486" height="174" id="Logcat" order="0" sideWeight="0.8458445" weight="0.23965937" />
       <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.4991274" weight="0.3281471" />
@@ -547,14 +607,14 @@
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4991274" weight="0.3281471" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.1541555" side_tool="true" weight="0.33097595" />
-      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.7969169" weight="0.23479319" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.7969169" visible="true" weight="0.036540803" />
       <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49865952" weight="0.07266983" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.3296837" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" weight="0.3297587" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" anchor="right" id="Preview" order="3" sideWeight="0.49918962" visible="true" weight="0.33479625" />
+      <window_info anchor="right" id="Preview" order="3" sideWeight="0.49918962" weight="0.33479625" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5008104" side_tool="true" weight="0.026809651" />
     </layout>
@@ -603,9 +663,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/RoundImageView.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_dialog.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/include_musicbar.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu_layout.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_dialog.xml" />
@@ -626,7 +683,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_look.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tablisten_shouqi.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/MenuAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/MenuItemModel.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_listen.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/CircleData.java" />
@@ -657,25 +713,50 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabSearch.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/AutoLineLinerLayout.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fragment_home.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/drawlayout_settings.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="369">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layouts/fragment/values/attrs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="66">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layouts/include/layout/include_music_bar.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+        <state relative-caret-position="44">
+          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
         </state>
       </provider>
     </entry>

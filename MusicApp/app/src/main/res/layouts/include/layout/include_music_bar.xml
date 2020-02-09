@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/include_constrain"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/include_tvDivision"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#dddddd"
+            app:layout_constraintBottom_toTopOf="@+id/include_tvEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/include_tvEnd"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.example.musicapp.Module.CircularImageView
+            android:id="@+id/include_ivMusicHeader"
+            app:isCircle="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/include_default"/>
+
+        <TextView
+            android:id="@+id/include_tvMusicName"
+            android:textColor="#000000"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="歌名"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/include_ibShow"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/include_ivMusicHeader"
+            app:layout_constraintTop_toBottomOf="@+id/include_seekBar" />
+
+        <TextView
+            android:id="@+id/include_tvMusicAuthor"
+            android:textColor="#666666"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="歌曲作者"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/include_ibShow"
+            app:layout_constraintStart_toStartOf="@+id/include_tvMusicName"
+            app:layout_constraintTop_toBottomOf="@+id/include_tvMusicName" />
+
+        <SeekBar
+            android:id="@+id/include_seekBar"
+            android:progress="0"
+            android:paddingTop="4dp"
+            android:paddingBottom="3dp"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/include_ivMusicHeader"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/include_ibMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/include_tvMusicName"
+            app:srcCompat="@drawable/include_menu" />
+
+        <ImageButton
+            android:id="@+id/include_ibNext"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toStartOf="@+id/include_ibMenu"
+            app:layout_constraintTop_toTopOf="@+id/include_ibMenu"
+            app:srcCompat="@drawable/include_playnext" />
+
+        <ImageButton
+            android:id="@+id/include_ibShow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#00000000"
+            app:layout_constraintEnd_toStartOf="@+id/include_ibNext"
+            app:layout_constraintTop_toTopOf="@+id/include_ibNext"
+            app:srcCompat="@drawable/include_play" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
