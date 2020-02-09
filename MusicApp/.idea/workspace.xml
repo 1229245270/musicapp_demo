@@ -5,47 +5,28 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <library-updates>
+      <library-update>
+        <group-id>com.squareup.picasso</group-id>
+        <name>picasso</name>
+        <version>2.71828</version>
+        <repository>JCenter</repository>
+      </library-update>
+      <library-update>
+        <group-id>androidx.constraintlayout</group-id>
+        <name>constraintlayout</name>
+        <version>2.0.0-beta3</version>
+        <repository>Google</repository>
+      </library-update>
+    </library-updates>
+    <last-search-timestamp>1572253632971</last-search-timestamp>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="98976f25-e7cb-45e9-9f44-0de7de3ae31e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/musicapp/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/musicapp/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-    </list>
+    <list default="true" id="e18f1378-b634-47ff-9aec-11d91e9441c6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,36 +36,271 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MusicApp" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf />
+  <component name="FavoritesManager">
+    <favorites_list name="MusicApp" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <dirStrings>
+      <dir>E:\androidApp\MusicApp\app\src\main\res\layout</dir>
+    </dirStrings>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="F:\androidProject\hzc\MusicApp.jks" />
+    <option name="KEY_ALIAS" value="FirstKey" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen_rankSong.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Service/ServiceUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_me_danqu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/DateBase/Data.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/Song.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabSearch.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen_rank.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Method/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/bottomdialog_in.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/bottomdialog_out.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/anim.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/bottomdialog_in.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/bottomdialog_out.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_bottom_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/bottom_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/BottomDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/DialogAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Method/MusicUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/Tab_Me_danQu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/SongByAlbum/SongByAlbum.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabSearchResult.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/RankSongAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Method/IncludeMusicBar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MusicActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/DateBase/UsersTable.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Service/MusicService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/MenuItemModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/MenuItemLayout.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/include_musicbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_menu_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/BaseScrollView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabMe.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_search_result.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_look.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/Home_Fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/CircleAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/CircleData.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_listener_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_listen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="205" />
-    <option name="y" value="156" />
+    <option name="x" value="101" />
+    <option name="y" value="55" />
     <option name="width" value="1655" />
     <option name="height" value="955" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="musicapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gradle" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ExportApk.ApkPath" value="F:\androidProject\androidTest\MusicApp\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="Nexus_5X_API_23" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MusicApptest" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\anim" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.musicapp" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.example.musicapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.musicapp.Model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\androidApp\MusicApp\app\src\main\res\drawable" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\drawable" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\values" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\res\layout" />
+      <recent name="F:\androidProject\androidTest\MusicApp\app\src\main\java\com\example\musicapp\Module" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -98,10 +314,116 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.MainActivity">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.musicapp.MainActivity" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicActivity" type="AndroidRunConfigurationType" factoryName="Android App" temporary="true">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.musicapp.MusicActivity" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -159,17 +481,41 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MusicApp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android App.MainActivity" />
+        <item itemvalue="Gradle.MusicApp" />
+        <item itemvalue="Android App.MusicActivity" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="98976f25-e7cb-45e9-9f44-0de7de3ae31e" name="Default Changelist" comment="" />
-      <created>1581228847658</created>
+      <changelist id="e18f1378-b634-47ff-9aec-11d91e9441c6" name="Default Changelist" comment="" />
+      <created>1565683218053</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1581228847658</updated>
+      <updated>1565683218053</updated>
     </task>
     <servers />
   </component>
@@ -183,42 +529,153 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="205" y="156" width="1655" height="955" extended-state="0" />
+    <frame x="101" y="55" width="1655" height="955" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.32978058" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Logcat" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" weight="0.32886723" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.20097442" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Structure" order="0" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Favorites" order="2" sideWeight="0.5029412" side_tool="true" weight="0.18431635" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Build Variants" order="4" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Resources Explorer" order="6" weight="0.3297587" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4970588" visible="true" weight="0.20564264" />
+      <window_info id="Captures" order="8" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info anchor="bottom" x="200" y="645" width="1486" height="174" id="Logcat" order="0" sideWeight="0.8458445" weight="0.23965937" />
+      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.4991274" weight="0.3281471" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.048973143" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4991274" weight="0.3281471" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.1541555" side_tool="true" weight="0.33097595" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.7969169" weight="0.23479319" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49865952" weight="0.07266983" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.3296837" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" weight="0.3297587" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info active="true" anchor="right" id="Preview" order="3" sideWeight="0.49918962" visible="true" weight="0.33479625" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5008104" side_tool="true" weight="0.026809651" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Structure" order="0" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Favorites" order="2" sideWeight="0.5029412" side_tool="true" weight="0.18431635" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Build Variants" order="4" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Resources Explorer" order="6" weight="0.3297587" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.4970588" visible="true" weight="0.15214477" />
+      <window_info id="Captures" order="8" sideWeight="0.50145775" side_tool="true" weight="0.18431635" />
+      <window_info anchor="bottom" id="Logcat" order="0" sideWeight="0.8458445" visible="true" weight="0.33097595" />
+      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.4991274" weight="0.3286385" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.45120227" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4991274" weight="0.3286385" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.1541555" side_tool="true" visible="true" weight="0.33097595" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.7969169" weight="0.10608204" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49865952" weight="0.10466761" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" weight="0.3297587" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Preview" order="3" sideWeight="0.49918962" weight="0.347185" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5008104" side_tool="true" weight="0.026809651" />
+    </layout-to-restore>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="MainActivity">
+        <watch expression="view" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>view</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/RoundImageView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_dialog.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/include_musicbar.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu_layout.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_dialog.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu_dowm_layout.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fragment_musiclist.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/MusicList_Fragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_search.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search_result.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabLook.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/BaseScrollView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_look.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tablisten_shouqi.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/MenuAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/CircularImageView.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/MenuItemModel.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_listen.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/CircleData.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_listener_circle.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/MenuItemLayout.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/DateBase/Data.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/CircleAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/DateBase/DatabaseHelper.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/RankAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/SongAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Adapter/RankSongAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/BottomDialog.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/Home_Fragment.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_music.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_me.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabMe.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Model/SearchSession.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabSearchResult.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen_rank.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabListen_rankSong.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MusicActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Service/MyServiceConn.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/Tab_Me_danQu.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Service/MusicService.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Method/MusicUtils.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Fragment/TabSearch.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/Module/AutoLineLinerLayout.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fragment_home.xml" />
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/musicapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        <state relative-caret-position="242">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
         </state>
       </provider>
     </entry>
