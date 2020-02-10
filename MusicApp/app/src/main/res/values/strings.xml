@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="song_num">%1$d首</string>
+    <string name="song_down_num">%1$d首已下载</string>
 </resources>

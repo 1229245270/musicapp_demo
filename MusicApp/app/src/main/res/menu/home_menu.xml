@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/ting"
+        android:title="听歌识曲"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/sao"
+        android:title="扫一扫"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/add"
+        android:title="添加好友"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/me"
+        android:title="我的二维码"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+</menu>

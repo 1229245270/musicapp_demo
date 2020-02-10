@@ -1,5 +1,6 @@
 package com.example.musicapp.Factory;
 
+import com.example.musicapp.Fragment.TabHome;
 import com.example.musicapp.Fragment.TabListen;
 import com.example.musicapp.Fragment.TabLook;
 import com.example.musicapp.Fragment.TabMe;
@@ -13,12 +14,15 @@ public class FragmentFactory {
         if(myFragment == null) {
             switch (position) {
                 case 10:
-                    myFragment = new TabMe();
+                    myFragment = new TabHome();
                     break;
                 case 11:
-                    myFragment = new TabListen();
+                    myFragment = new TabMe();
                     break;
                 case 12:
+                    myFragment = new TabListen();
+                    break;
+                case 13:
                     myFragment = new TabLook();
                     break;
             }

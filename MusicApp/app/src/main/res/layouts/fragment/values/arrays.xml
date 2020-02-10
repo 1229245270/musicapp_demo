@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array  name="tabTitle">
+        <item>我</item>
+        <item>听</item>
+        <item>看</item>
+    </array>
+    <array name="tabMeLocality">
+        <item>单曲</item>
+        <item>歌手</item>
+        <item>专辑</item>
+        <item>MV</item>
+    </array>
+</resources>

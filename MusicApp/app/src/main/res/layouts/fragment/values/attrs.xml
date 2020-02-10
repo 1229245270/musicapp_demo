@@ -8,4 +8,9 @@
         <attr name="leftBottomRadius" format="dimension"/>
         <attr name="isCircle" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="TabMeMenu">
+        <attr name="titleText" format="string"/>
+        <attr name="isSelect" format="boolean"/>
+    </declare-styleable>
 </resources>

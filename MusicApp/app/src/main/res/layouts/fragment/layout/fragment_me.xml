@@ -6,5 +6,320 @@
     android:scrollbars="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <com.example.musicapp.Module.CircularImageView
+                    android:id="@+id/tabMe_ivMyHeader"
+                    app:isCircle="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/include_default" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvMyName"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="用户名"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_ivMyHeader"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_ivMyHeader" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:textSize="10sp"
+                    android:textColor="#999999"
+                    android:gravity="center"
+                    android:text="听歌0分钟"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_ivLeave"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_ivLeave"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_ivLeave"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/tabMe_ivInformation"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/drawlayout_dmail" />
+
+                <ImageView
+                    android:id="@+id/tabMe_ivVIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_tvMyName"
+                    app:layout_constraintEnd_toStartOf="@+id/tabMe_ivInformation"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_tvMyName"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_tvMyName"
+                    app:srcCompat="@drawable/tabme_vip" />
+
+                <ImageView
+                    android:id="@+id/tabMe_ivLeave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_ivMyHeader"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_ivMyHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvMyName"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/tabme_leave" />
+
+                <ImageView
+                    android:id="@+id/tabMe_ivIdentity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_tvTime"
+                    app:layout_constraintEnd_toStartOf="@+id/tabMe_ivInformation"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_tvTime"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_tvTime"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/tabme_identity" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvDivision1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#eee"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_ivMyHeader" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvLocality"
+                    android:drawablePadding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:drawableTop="@drawable/tabme_locality"
+                    android:gravity="center"
+                    android:textColor="@drawable/tabme_select"
+                    android:text="本地音乐"
+                    android:lineHeight="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvDivision1"
+                    app:layout_constraintWidth_percent=".2" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvLocalityNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textColor="#333"
+                    android:text="0"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintStart_toStartOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvLocality" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvLove"
+                    android:layout_width="0dp"
+                    android:drawablePadding="6dp"
+                    android:lineHeight="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:drawableTop="@drawable/tabme_love"
+                    android:gravity="center"
+                    android:textColor="@drawable/tabme_select"
+                    android:text="我的收藏"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_percent=".2" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvLoveNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="0"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/tabMe_tvLove"
+                    app:layout_constraintStart_toStartOf="@+id/tabMe_tvLove"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvLove" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvDownLoad"
+                    android:layout_width="0dp"
+                    android:drawablePadding="6dp"
+                    android:lineHeight="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:drawableTop="@drawable/tabme_download"
+                    android:gravity="center"
+                    android:textColor="@drawable/tabme_select"
+                    android:text="下载"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_tvLove"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_percent=".2" />
+                <TextView
+                    android:id="@+id/tabMe_tvDownLoadNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="0"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/tabMe_tvDownLoad"
+                    app:layout_constraintStart_toStartOf="@+id/tabMe_tvDownLoad"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvDownLoad" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvNewSong"
+                    android:lineHeight="20dp"
+                    android:drawablePadding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:drawableTop="@drawable/tabme_songnew"
+                    android:gravity="center"
+                    android:textColor="@drawable/tabme_select"
+                    android:text="最近播放"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tabMe_tvDownLoad"
+                    app:layout_constraintTop_toTopOf="@+id/tabMe_tvLocality"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_percent=".2" />
+
+                <TextView
+                    android:id="@+id/tabMe_tvNewSongNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="0"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/tabMe_tvNewSong"
+                    app:layout_constraintStart_toStartOf="@+id/tabMe_tvNewSong"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvNewSong" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#eee"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabMe_tvLocalityNum" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:paddingBottom="55dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.example.musicapp.Module.TabMeMenu
+                    android:id="@+id/tabMe_menu"
+                    app:titleText="直降歌单"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.example.musicapp.Module.TabMeMenu>
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <ImageView
+                        android:src="@drawable/include_default"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                    <TextView
+                        android:textSize="18sp"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000"
+                        android:text="推广"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingRight="10dp"
+                        android:text="新春福利，精彩音乐现场立即回顾"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:src="@drawable/include_default"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <ImageView
+                        android:src="@drawable/include_default"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                    <TextView
+                        android:textSize="18sp"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000"
+                        android:text="音乐频道"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:paddingRight="10dp"
+                        android:text="就等你了"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:src="@drawable/include_default"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                </LinearLayout>
+                <TextView
+                    android:gravity="center"
+                    android:text="发现更多好音乐 >"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
