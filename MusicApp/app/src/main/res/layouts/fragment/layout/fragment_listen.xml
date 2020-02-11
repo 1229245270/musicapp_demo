@@ -4,9 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tabListen_rvTop"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="80dp"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.youth.banner.Banner
+                android:id="@+id/tabListen_banner"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tabListen_rvTop"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/tabListen_dataDay"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:text="11"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tabListen_dataMonth"
+                    android:gravity="bottom"
+                    android:textColor="#000"
+                    android:text="FEB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tabListen_dataWeek"
+                    android:paddingLeft="10dp"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:textColor="#000"
+                    android:text="周二"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tabListen_dataMore"
+                    android:drawableRight="@drawable/tablisten_datemore"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:text="歌单广场"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tabListen_rvGeDan"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabListen_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/tabListen_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

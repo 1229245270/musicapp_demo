@@ -1,6 +1,7 @@
 package com.example.musicapp.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,16 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
     private String[] strTitle;
     private Context context;
     private int add;
+    private int flog;
 
-    public MyPagerAdapter(FragmentManager fm, Context context,int add) {
+    public MyPagerAdapter(FragmentManager fm, Context context,int add,int flog) {
         super(fm);
-        strTitle = context.getResources().getStringArray(R.array.tabTitle);
+        if(context.getResources().getInteger(R.integer.tab_home) == flog){
+            strTitle = context.getResources().getStringArray(R.array.tabHome);
+        }else if(context.getResources().getInteger(R.integer.tab_listen) == flog){
+            strTitle = context.getResources().getStringArray(R.array.tabListen);
+        }
+        this.flog = flog;
         this.context = context;
         this.add = add;
     }
@@ -39,6 +46,11 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
         View view = View.inflate(context,R.layout.item_toptitle,null);
         TextView fragHome_tvTitle = view.findViewById(R.id.fragHome_tvTitle);
         fragHome_tvTitle.setText(strTitle[position]);
+        if(flog == context.getResources().getInteger(R.integer.tab_home)){
+            fragHome_tvTitle.setTextColor(context.getResources().getColor(R.color.colorTabHomeUnSelect));
+        }else if(flog == context.getResources().getInteger(R.integer.tab_listen)){
+            fragHome_tvTitle.setTextColor(context.getResources().getColor(R.color.colorTabListenUnSelect));
+        }
         return view;
     }
 

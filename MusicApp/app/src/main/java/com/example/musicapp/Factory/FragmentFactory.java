@@ -25,6 +25,28 @@ public class FragmentFactory {
                 case 13:
                     myFragment = new TabLook();
                     break;
+                case 14:
+                    myFragment = new TabLook();
+                    break;
+                case 121:
+                    myFragment = new TabLook();
+                    break;
+                case 122:
+                    myFragment = new TabLook();
+                    break;
+                case 123:
+                    myFragment = new TabLook();
+                    break;
+                case 124:
+                    myFragment = new TabLook();
+                    break;
+                case 125:
+                    myFragment = new TabLook();
+                    break;
+                case 126:
+                    myFragment = new TabLook();
+                    break;
+
             }
             hashMap.put(position,myFragment);
         }

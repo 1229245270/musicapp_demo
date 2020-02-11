@@ -42,7 +42,8 @@ public class TabHome extends MyFragment {
         //TabLayout和ViewPager绑定
         fragHome_tabLayout.setupWithViewPager(fragHome_viewPager);
         //设置适配器
-        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getContext(),11);
+        int flog = getContext().getResources().getInteger(R.integer.tab_home);
+        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getContext(),11,flog);
         fragHome_viewPager.setAdapter(myPagerAdapter);
         for(int n = 0;n < fragHome_tabLayout.getTabCount();n++){
             TabLayout.Tab tab = fragHome_tabLayout.getTabAt(n);
@@ -59,7 +60,7 @@ public class TabHome extends MyFragment {
                 View view = tab.getCustomView();
                 if(view != null && view instanceof TextView){
                     ((TextView) view).setTextSize(22);
-                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabSelect));
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabHomeSelect));
                 }
             }
 
@@ -68,7 +69,7 @@ public class TabHome extends MyFragment {
                 View view = tab.getCustomView();
                 if(view != null && view instanceof TextView){
                     ((TextView) view).setTextSize(16);
-                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabUnSelect));
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabHomeUnSelect));
                 }
             }
 

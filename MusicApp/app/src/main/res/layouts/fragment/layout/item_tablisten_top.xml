@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView"
         android:paddingTop="4dp"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="#000"
         android:text="乐库"
         android:layout_width="wrap_content"

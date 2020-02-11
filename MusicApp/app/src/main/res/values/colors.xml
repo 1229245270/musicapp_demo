@@ -3,6 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorTabSelect">#ffffff</color>
-    <color name="colorTabUnSelect">#aaaaaa</color>
+    <color name="colorTabHomeSelect">#fff</color>
+    <color name="colorTabHomeUnSelect">#aaa</color>
+    <color name="colorTabListenSelect">#000</color>
+    <color name="colorTabListenUnSelect">#333333</color>
 </resources>

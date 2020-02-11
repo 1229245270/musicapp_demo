@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array  name="tabTitle">
+    <array name="tabHome">
         <item>我</item>
         <item>听</item>
         <item>看</item>
     </array>
-    <array name="tabMeLocality">
-        <item>单曲</item>
-        <item>歌手</item>
-        <item>专辑</item>
-        <item>MV</item>
+    <array name="tabListen">
+        <item>全部</item>
+        <item>新歌</item>
+        <item>歌单</item>
+        <item>直播</item>
+        <item>视频</item>
+        <item>评论</item>
     </array>
 </resources>

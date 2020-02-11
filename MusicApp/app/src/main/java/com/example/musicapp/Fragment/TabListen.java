@@ -1,40 +1,126 @@
 package com.example.musicapp.Fragment;
 
-import android.graphics.Color;
+import android.content.Context;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
-import com.example.musicapp.Adapter.TabListenTopAdapter;
+import com.example.musicapp.Adapter.BaseRecycleAdapter;
+import com.example.musicapp.Adapter.BaseRecycleViewHolder;
+import com.example.musicapp.Adapter.MyPagerAdapter;
 import com.example.musicapp.Factory.MyFragment;
+import com.example.musicapp.Model.TabListenDate;
 import com.example.musicapp.Model.TabListenTop;
 import com.example.musicapp.R;
+import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.Picasso;
+import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class TabListen extends MyFragment {
-    private RecyclerView tabListen_rvTop;
-    private int dragFlags,swipeFlags;
+    private String TAG = "TabListen";
+    private RecyclerView tabListen_rvTop,tabListen_rvGeDan;
+    //private int dragFlags,swipeFlags;
     private List<TabListenTop> listenTops = new ArrayList<>();
-    private TabListenTopAdapter adapter;
+    private List<TabListenDate> listenDates = new ArrayList<>();
+    private BaseRecycleAdapter tabListenBaseAdapter;
+    private Banner tabListen_banner;
+    private TabLayout tabListen_tabLayout;
+    private ViewPager tabListen_viewPager;
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_listen,null);
+
+        tabListen_banner = view.findViewById(R.id.tabListen_banner);
+        tabListen_banner.setImageLoader(new GlideImageLoader());
+        List<Integer> images = new ArrayList<>();
+        images.add(R.drawable.glideimg1);
+        images.add(R.drawable.glideimg2);
+        images.add(R.drawable.glideimg3);
+        tabListen_banner.setImages(images);
+        tabListen_banner.start();
+
         tabListen_rvTop = view.findViewById(R.id.tabListen_rvTop);
+        listenTops.add(new TabListenTop(R.drawable.tablisten_yueku,"乐库"));
+        listenTops.add(new TabListenTop(R.drawable.tablisten_guesslike,"猜你喜欢"));
+        listenTops.add(new TabListenTop(R.drawable.tablisten_gedan,"歌单"));
+        listenTops.add(new TabListenTop(R.drawable.tablisten_rank,"排行榜"));
+        listenTops.add(new TabListenTop(R.drawable.tablisten_more,"更多"));
+        tabListenBaseAdapter = new BaseRecycleAdapter<TabListenTop>(getContext(),listenTops,R.layout.item_tablisten_top) {
+            @Override
+            public void convert(BaseRecycleViewHolder holder, TabListenTop item, int position) {
+                holder.setText(R.id.textView,item.getText());
+                holder.setImageResource(R.id.imageView,item.getImage());
+            }
+        };
         tabListen_rvTop.setLayoutManager(new GridLayoutManager(getContext(), 5, RecyclerView.VERTICAL, false));
-        for(int i = 0;i < 5;i++){
-            listenTops.add(new TabListenTop(R.drawable.include_default,"wde"+i));
+        tabListen_rvTop.setAdapter(tabListenBaseAdapter);
+        listenDates.add(new TabListenDate(R.drawable.include_default,"111","根据你的口味推荐"));
+        listenDates.add(new TabListenDate(R.drawable.include_default,"222","欧美电音：提神醒脑的神器"));
+        listenDates.add(new TabListenDate(R.drawable.include_default,"333","列表循环！极致音效的欧美电音歌喉"));
+        listenDates.add(new TabListenDate(R.drawable.include_default,"444","评论过万的爆火英文歌|好听到窒息"));
+        listenDates.add(new TabListenDate(R.drawable.include_default,"555","超强出场BGM：死亡的气息"));
+        listenDates.add(new TabListenDate(R.drawable.include_default,"666","游戏视频里的超燃BGM都在这里"));
+        tabListenBaseAdapter = new BaseRecycleAdapter<TabListenDate>(getContext(), listenDates, R.layout.item_tablisten_date) {
+            @Override
+            public void convert(BaseRecycleViewHolder holder, TabListenDate item, int position) {
+                holder.setImageResource(R.id.imageView,item.getImage());
+                holder.setText(R.id.listenerNumber,item.getListenerNumber());
+                holder.setText(R.id.textView,item.getText());
+            }
+        };
+        tabListen_rvGeDan = view.findViewById(R.id.tabListen_rvGeDan);
+        tabListen_rvGeDan.setLayoutManager(new GridLayoutManager(getContext(), 3, RecyclerView.VERTICAL, false));
+        tabListen_rvGeDan.setAdapter(tabListenBaseAdapter);
+
+        tabListen_tabLayout = view.findViewById(R.id.tabListen_tabLayout);
+        tabListen_viewPager = view.findViewById(R.id.tabListen_viewPager);
+        tabListen_tabLayout.setupWithViewPager(tabListen_viewPager);
+        int flog = getContext().getResources().getInteger(R.integer.tab_listen);
+        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getContext(),121,flog);
+        tabListen_viewPager.setAdapter(pagerAdapter);
+        for(int n = 0;n < tabListen_tabLayout.getTabCount();n++){
+            TabLayout.Tab tab = tabListen_tabLayout.getTabAt(n);
+            if(tab != null){
+                //tab.setText(myPagerAdapter.getPageTitle(n));
+                tab.setCustomView(pagerAdapter.getTabView(n));
+            }
         }
-        adapter = new TabListenTopAdapter(getContext(),listenTops);
-        tabListen_rvTop.setAdapter(adapter);
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+
+        //设置TabLayout选择事件
+        tabListen_tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                tabListen_viewPager.setCurrentItem(tab.getPosition());
+                View view = tab.getCustomView();
+                if(view != null && view instanceof TextView){
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabListenSelect));
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                View view = tab.getCustomView();
+                if(view != null && view instanceof TextView){
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.colorTabListenUnSelect));
+                }
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
+        //拖拽功能
+        /*ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
             @Override
             public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
                 if(recyclerView.getLayoutManager() instanceof GridLayoutManager){
@@ -62,7 +148,7 @@ public class TabListen extends MyFragment {
                         Collections.swap(listenTops,i,i - 1);
                     }
                 }
-                adapter.notifyItemMoved(fromPosition,toPosition);
+                tabListenTopAdapter.notifyItemMoved(fromPosition,toPosition);
                 return true;
             }
 
@@ -88,12 +174,19 @@ public class TabListen extends MyFragment {
                 viewHolder.itemView.setBackgroundColor(0);
             }
         });
-        itemTouchHelper.attachToRecyclerView(tabListen_rvTop);
+        itemTouchHelper.attachToRecyclerView(tabListen_rvTop);*/
         return view;
     }
 
     @Override
     public void loadData() {
 
+    }
+    class GlideImageLoader extends ImageLoader{
+
+        @Override
+        public void displayImage(Context context, Object path, ImageView imageView) {
+            Picasso.get().load((int)path).into(imageView);
+        }
     }
 }
