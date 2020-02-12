@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="暗室逢灯三哥哥士大夫二个人阿瑟特任务暗室逢灯三哥哥士大夫二个人阿瑟特任务暗室逢灯三哥哥士大夫二个人阿瑟特任务暗室逢灯三哥哥士大夫二个人阿瑟特任务"
+        android:textColor="#000" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="《偷偷喜欢你》-SING女团"
+            android:textColor="#666" />
+
+        <ImageView
+            android:id="@+id/songHeader"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:src="@drawable/include_default" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <com.example.musicapp.Module.CircularImageView
+            android:id="@+id/authorHeader"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:src="@drawable/include_default"
+            app:isCircle="true" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="2dp"
+            android:text="亲吻你的脸"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/getLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/item_all_getlike"
+            android:drawablePadding="2dp"
+            android:padding="7dp"
+            android:text="1453"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/item_all_pinlun"
+            android:drawablePadding="2dp"
+            android:padding="7dp"
+            android:text="81"
+            android:textColor="#666" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="7dp"
+            android:src="@drawable/include_default" />
+    </LinearLayout>
+</LinearLayout>

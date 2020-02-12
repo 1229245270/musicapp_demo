@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.musicapp.Module.NumberImageView;
+import com.example.musicapp.R;
+
 public class BaseRecycleViewHolder extends RecyclerView.ViewHolder {
 
     private SparseArray<View> views;
@@ -41,5 +44,14 @@ public class BaseRecycleViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView = getView(viewId);
         imageView.setImageResource(drawableId);
         return this;
+    }
+    public BaseRecycleViewHolder setImageNumber(int viewId,int num){
+        NumberImageView numberImageView = getView(viewId);
+        numberImageView.setNum(num);
+        return this;
+    }
+    public RecyclerView getRecycleView(int viewId){
+        RecyclerView recyclerView = getView(viewId);
+        return recyclerView;
     }
 }
