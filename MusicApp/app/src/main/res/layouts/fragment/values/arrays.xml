@@ -13,4 +13,10 @@
         <item>视频</item>
         <item>评论</item>
     </array>
+    <array name="tabMe">
+        <item>单曲</item>
+        <item>歌手</item>
+        <item>专辑</item>
+        <item>MV</item>
+    </array>
 </resources>

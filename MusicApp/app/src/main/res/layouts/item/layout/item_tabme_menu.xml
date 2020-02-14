@@ -37,7 +37,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp" />
         <ImageView
-            android:id="@+id/itemTabMe_ivShare"
+            android:id="@+id/itemTabMe_ivDaoru"
             android:padding="18dp"
             android:src="@drawable/include_default"
             android:layout_width="60dp"
@@ -52,7 +52,6 @@
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/itemTabMe_rvShow"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

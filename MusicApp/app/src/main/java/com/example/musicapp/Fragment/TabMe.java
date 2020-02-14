@@ -30,14 +30,24 @@ public class TabMe extends MyFragment {
     private TextView tabMe_tvMyName,tabMe_tvTime,tabMe_tvLocality,tabMe_tvLove,tabMe_tvDownLoad,tabMe_tvNewSong;
     private static TextView tabMe_tvLocalityNum;
     private ImageView tabMe_ivMyHeader,tabMe_ivVIP,tabMe_ivLeave,tabMe_ivIdentity,tabMe_ivInformation;
-    private TabMeMenu tabMe_menu;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-    private Fragment musicList_fragment;
+    private Fragment TabMeHome;
+    private TabMeMenu tabMe_menu;
+    @SuppressLint("HandlerLeak")
+    static Handler handler = new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if(msg.what == 0){
+                tabMe_tvLocalityNum.setText(String.valueOf(msg.arg1));
+            }
+        }
+    };
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_me,null);
-        musicList_fragment = FragmentFactory.createFragment(2000);
+        TabMeHome = FragmentFactory.createFragment(110);
         tabMe_tvMyName = view.findViewById(R.id.tabMe_tvMyName);
         tabMe_tvTime = view.findViewById(R.id.tabMe_tvTime);
         tabMe_tvLocality = view.findViewById(R.id.tabMe_tvLocality);
@@ -52,25 +62,52 @@ public class TabMe extends MyFragment {
         tabMe_tvLocalityNum = view.findViewById(R.id.tabMe_tvLocalityNum);
 
         tabMe_menu = view.findViewById(R.id.tabMe_menu);
+        tabMe_menu.getItemTabMe_ivIncrease().setImageResource(R.drawable.tabme_increase);
+        tabMe_menu.getItemTabMe_ivMore().setImageResource(R.drawable.tabme_more);
+        tabMe_menu.getItemTabMe_ivShare().setImageResource(R.drawable.tabme_daoru);
 
+        preferences = getContext().getSharedPreferences("mSetting",Context.MODE_PRIVATE);
+        editor = preferences.edit();
+        tabMe_tvLocality.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putInt("fragmentId",0);
+                editor.commit();
+                replaceFragment();
+            }
+        });
         return view;
     }
 
     @Override
     public void loadData() {
         List<Object> objects = new ArrayList<>();
-        TabMeMenuDown model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",2,2,R.mipmap.ic_launcher);
+        TabMeMenuDown model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",2,2,"猜你喜欢");
         objects.add(model);
-        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",12,0,0);
+        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",12,0,"");
         objects.add(model);
-        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",3,2,0);
+        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",3,2,"");
         objects.add(model);
-        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",22,12,R.mipmap.ic_launcher);
+        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",22,12,"");
         objects.add(model);
-        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",2,0,R.drawable.include_default);
+        model = new TabMeMenuDown(R.drawable.include_default,"我的歌单",2,0,"");
         objects.add(model);
         tabMe_menu.setAdapter(objects);
 
+    }
+
+    public void replaceFragment(){
+        if (getActivity().getSupportFragmentManager() != null) {
+            Fragment Home_Fragment = FragmentFactory.createFragment(10);
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.hide(Home_Fragment);
+            if(!TabMeHome.isAdded()) transaction.add(R.id.frameLayout_main,TabMeHome,"tagMusicList").show(TabMeHome);
+            else transaction.show(TabMeHome);
+            transaction
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
 }

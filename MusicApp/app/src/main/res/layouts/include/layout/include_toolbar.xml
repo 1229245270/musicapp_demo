@@ -13,8 +13,8 @@
         android:id="@+id/fragHome_ivMenu"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:padding="9dp"
-        android:src="@drawable/include_default" />
+        android:padding="13dp"
+        android:src="@drawable/tabhome_menu" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/fragHome_tabLayout"
@@ -26,15 +26,15 @@
         app:tabIndicatorHeight="0dp"/>
     <ImageView
         android:id="@+id/fragHome_ivSearch"
-        android:padding="9dp"
-        android:src="@drawable/include_default"
+        android:padding="13dp"
+        android:src="@drawable/tabhome_select"
         android:layout_width="50dp"
         android:layout_height="50dp" />
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/fragHome_toolBar"
-        android:layout_margin="9dp"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:padding="13dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:theme="@style/ToolBarTheme"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 

@@ -3,6 +3,7 @@ package com.example.musicapp.Adapter;
 import android.content.Context;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,10 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.musicapp.Module.NumberImageView;
 import com.example.musicapp.R;
 
+import butterknife.OnItemClick;
+
 public class BaseRecycleViewHolder extends RecyclerView.ViewHolder {
 
     private SparseArray<View> views;
     private Context context;
+
+    public interface OnItemClickListener {
+        void onItemClick(View view ,int position);
+        void onItemLongClick(View view ,int position);
+    }
+
     public BaseRecycleViewHolder(Context context,@NonNull View itemView) {
         super(itemView);
         this.context = context;
@@ -54,4 +63,9 @@ public class BaseRecycleViewHolder extends RecyclerView.ViewHolder {
         RecyclerView recyclerView = getView(viewId);
         return recyclerView;
     }
+    public Button getButton(int viewId){
+        Button button = getView(viewId);
+        return button;
+    }
+
 }

@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.musicapp.Model.DrawableBottom;
 import com.example.musicapp.Model.DrawableTop;
+import com.example.musicapp.Model.Empty;
+import com.example.musicapp.Model.Foot;
 import com.example.musicapp.Model.GeDan;
+import com.example.musicapp.Model.Head;
 import com.example.musicapp.Model.PingLun;
 import com.example.musicapp.Model.RvZhiBo;
 import com.example.musicapp.Model.ShiPin;
@@ -25,6 +28,9 @@ import com.example.musicapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.OnItemClick;
+import butterknife.OnItemLongClick;
 
 public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewHolder> {
     private Context context;
@@ -37,8 +43,14 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
     private static final int TYPE_ZHIBO = 2;
     private static final int TYPE_SHIPIN = 3;
     private static final int TYPE_PINGLUN = 4;
+    private static final int TYPE_EMPTY = 5;
+    private static final int TYPE_FOOT = 6;
+    private static final int TYPE_HEAD = 7;
+    private RecyclerView recyclerView;
+    private OnItemClickListener onItemClickListener;
+    private View view;
 
-    public BaseRecycleAdapter(Context context, List<T> mData,int itemLayoutId){
+    public BaseRecycleAdapter(Context context, List<T> mData, int itemLayoutId){
         this.context = context;
         this.mData = mData;
         this.itemLayoutId = itemLayoutId;
@@ -52,7 +64,35 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
     }
 
     @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        this.recyclerView = recyclerView;
+    }
+
+    @Override
+    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+        this.recyclerView = null;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+    public interface  OnItemClickListener{
+        void onItemClick(int position);
+        void onItemLongClick(int position);
+    }
+    @Override
     public int getItemViewType(int position) {
+        if(mData.get(position) instanceof Empty){
+            return TYPE_EMPTY;
+        }
+        if(mData.get(position) instanceof Foot){
+            return TYPE_FOOT;
+        }
+        if(mData.get(position) instanceof Head){
+            return TYPE_HEAD;
+        }
         if(mData.get(position) instanceof XinGe){
             return TYPE_XINGE;
         }else if(mData.get(position) instanceof GeDan){
@@ -68,13 +108,20 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
         }
     }
 
-    public int getViewTypeCount(){
+    /*public int getViewTypeCount(){
         return 5;
-    }
+    }*/
     @NonNull
     @Override
     public BaseRecycleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view;
+        switch (viewType) {
+            case TYPE_EMPTY:
+                return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_empty, parent, false));
+            case TYPE_HEAD:
+                return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_head, parent, false));
+            case TYPE_FOOT:
+                return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_foot, parent, false));
+        }
         if(isTabListenAll){
             switch (viewType){
                 case TYPE_XINGE:
@@ -102,7 +149,22 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BaseRecycleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BaseRecycleViewHolder holder, final int position) {
+        if(onItemClickListener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    onItemClickListener.onItemLongClick(position);
+                    return false;
+                }
+            });
+        }
         convert(holder, mData.get(position), position);
     }
 

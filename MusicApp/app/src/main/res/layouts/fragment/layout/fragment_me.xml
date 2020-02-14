@@ -249,11 +249,12 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <com.example.musicapp.Module.TabMeMenu
                     android:id="@+id/tabMe_menu"
-                    app:titleText="直降歌单"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:titleText="自建歌单">
 
                 </com.example.musicapp.Module.TabMeMenu>
                 <LinearLayout
@@ -264,7 +265,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp">
                     <ImageView
-                        android:src="@drawable/include_default"
+                        android:src="@drawable/tabme_tuiguang"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                     <TextView
@@ -276,12 +277,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:textColor="#666"
                         android:paddingRight="10dp"
                         android:text="新春福利，精彩音乐现场立即回顾"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <ImageView
-                        android:src="@drawable/include_default"
+                        android:src="@drawable/tabme_you"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                 </LinearLayout>
@@ -305,16 +307,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:textColor="#666"
                         android:paddingRight="10dp"
                         android:text="就等你了"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <ImageView
-                        android:src="@drawable/include_default"
+                        android:src="@drawable/tabme_you"
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                 </LinearLayout>
                 <TextView
+                    android:textColor="#666"
                     android:gravity="center"
                     android:text="发现更多好音乐 >"
                     android:layout_width="match_parent"

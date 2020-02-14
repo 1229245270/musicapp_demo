@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.musicapp.Adapter.BaseRecycleAdapter;
 import com.example.musicapp.Adapter.BaseRecycleViewHolder;
@@ -20,19 +22,25 @@ import com.example.musicapp.Model.RvZhiBo;
 import com.example.musicapp.Model.ShiPin;
 import com.example.musicapp.Model.XinGe;
 import com.example.musicapp.Model.ZhiBo;
+import com.example.musicapp.Module.AutoLayoutManage;
+import com.example.musicapp.Module.AutoViewPager;
 import com.example.musicapp.R;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 public class TabListenAll extends MyFragment {
     private RecyclerView tabListenAll_rvGeDan;
     private List<Object> objectList = new ArrayList<>();
-
+    private int fragmentId = 0;
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_listen_all,null);
         tabListenAll_rvGeDan = view.findViewById(R.id.tabListenAll_rvGeDan);
+
         for(int i = 0;i < 5;i++){
             objectList.add(new XinGe(R.drawable.include_default,"songName" + i,"singer" + i,11 + i));
         }
@@ -98,9 +106,9 @@ public class TabListenAll extends MyFragment {
                 }
             }
         };
-        RecyclerView.LayoutManager linearLayout = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-        tabListenAll_rvGeDan.setLayoutManager(linearLayout);
+        tabListenAll_rvGeDan.setLayoutManager(new AutoLayoutManage(getContext(),LinearLayoutManager.VERTICAL,false));
         tabListenAll_rvGeDan.setAdapter(baseRecycleAdapter);
+
         return view;
     }
 

@@ -5,4 +5,5 @@
     <string name="song_down_num">%1$d首已下载</string>
     <integer name="tab_home">0</integer>
     <integer name="tab_listen">1</integer>
+    <integer name="tab_me">2</integer>
 </resources>

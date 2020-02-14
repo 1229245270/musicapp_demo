@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/itemTabMeDown_ivIcon"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/include_default"
         android:layout_width="60dp"
         android:layout_height="60dp" />
     <LinearLayout
@@ -56,17 +56,23 @@
 
         </LinearLayout>
     </LinearLayout>
-    <ImageView
-        android:id="@+id/itemTabMeDown_ivHintImg"
-        android:layout_marginLeft="16dp"
+    <TextView
+        android:text="猜你喜欢"
+        android:padding="4dp"
+        android:background="@drawable/tabme_bg_guess"
+        android:textColor="#117cc7"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/tabme_guess"
+        android:id="@+id/itemTabMeDown_tvHint"
         android:layout_gravity="center"
         android:src="@drawable/include_default"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
+        android:layout_height="28dp"
         android:visibility="visible"/>
     <ImageView
         android:id="@+id/itemTabMeDown_ivMore"
-        android:src="@drawable/include_default"
+        android:src="@drawable/tabme_more"
         android:layout_marginLeft="16dp"
         android:layout_gravity="center"
         android:padding="13dp"

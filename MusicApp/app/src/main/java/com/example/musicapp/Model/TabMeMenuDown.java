@@ -7,14 +7,14 @@ public class TabMeMenuDown {
     private String Name;
     private int SongNum;
     private int SongDownNum;
-    private int HintImg;
+    private String Hint;
 
-    public TabMeMenuDown(int icon, String name, int songNum, int songDownNum, int hintImg) {
+    public TabMeMenuDown(int icon, String name, int songNum, int songDownNum, String hint) {
         this.icon = icon;
         Name = name;
         SongNum = songNum;
         SongDownNum = songDownNum;
-        HintImg = hintImg;
+        Hint = hint;
     }
 
     public int getIcon() {
@@ -49,11 +49,11 @@ public class TabMeMenuDown {
         SongDownNum = songDownNum;
     }
 
-    public int getHintImg() {
-        return HintImg;
+    public String getHint() {
+        return Hint;
     }
 
-    public void setHintImg(int hintImg) {
-        HintImg = hintImg;
+    public void setHint(String hint) {
+        Hint = hint;
     }
 }

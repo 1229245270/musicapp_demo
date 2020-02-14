@@ -17,7 +17,6 @@
                 android:layout_height="160dp"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tabListen_rvTop"
-                android:paddingTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
             <LinearLayout
@@ -66,10 +65,13 @@
                 android:id="@+id/tabListen_tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"/>
-            <androidx.viewpager.widget.ViewPager
+            <com.example.musicapp.Module.AutoViewPager
                 android:id="@+id/tabListen_viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="100dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
         </LinearLayout>
     </ScrollView>
 

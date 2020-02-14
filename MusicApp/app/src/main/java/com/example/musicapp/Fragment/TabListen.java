@@ -17,6 +17,7 @@ import com.example.musicapp.Adapter.MyPagerAdapter;
 import com.example.musicapp.Factory.MyFragment;
 import com.example.musicapp.Model.TabListenDate;
 import com.example.musicapp.Model.TabListenTop;
+import com.example.musicapp.Module.AutoViewPager;
 import com.example.musicapp.R;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
@@ -35,7 +36,7 @@ public class TabListen extends MyFragment {
     private BaseRecycleAdapter tabListenBaseAdapter;
     private Banner tabListen_banner;
     private TabLayout tabListen_tabLayout;
-    private ViewPager tabListen_viewPager;
+    private AutoViewPager tabListen_viewPager;
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_listen,null);
@@ -86,7 +87,7 @@ public class TabListen extends MyFragment {
         tabListen_viewPager = view.findViewById(R.id.tabListen_viewPager);
         tabListen_tabLayout.setupWithViewPager(tabListen_viewPager);
         int flog = getContext().getResources().getInteger(R.integer.tab_listen);
-        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getContext(),121,flog);
+        final MyPagerAdapter pagerAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getContext(),121,flog);
         tabListen_viewPager.setAdapter(pagerAdapter);
         for(int n = 0;n < tabListen_tabLayout.getTabCount();n++){
             TabLayout.Tab tab = tabListen_tabLayout.getTabAt(n);
@@ -96,6 +97,23 @@ public class TabListen extends MyFragment {
             }
         }
 
+        tabListen_viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                tabListen_viewPager.requestLayout();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        tabListen_viewPager.setOffscreenPageLimit(pagerAdapter.getCount());
         //设置TabLayout选择事件
         tabListen_tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

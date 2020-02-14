@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Spinner
+            android:id="@+id/fragDanQu_spPlayOrder"
+            android:background="#00000000"
+            android:dropDownWidth="200dp"
+            android:dropDownVerticalOffset="50dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:layout_toRightOf="@+id/fragDanQu_spPlayOrder"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:layout_width="1dp"
+            android:layout_height="30dp" />
+        <ImageView
+            android:id="@+id/fragDanQu_ivPlay"
+            android:src="@drawable/tabmehome_play"
+            android:layout_toRightOf="@+id/fragDanQu_spPlayOrder"
+            android:padding="13dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/fragDanQu_tvDuoXian"
+            android:text="多选"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:layout_width="40dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_toRightOf="@+id/fragDanQu_ivSort"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:layout_width="1dp"
+            android:layout_height="30dp" />
+        <ImageView
+            android:id="@+id/fragDanQu_ivSort"
+            android:src="@drawable/tabmehome_paixu"
+            android:layout_toLeftOf="@+id/fragDanQu_tvDuoXian"
+            android:padding="13dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:layout_toRightOf="@+id/fragDanQu_ivSearch"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:layout_width="1dp"
+            android:layout_height="30dp" />
+        <ImageView
+            android:id="@+id/fragDanQu_ivSearch"
+            android:src="@drawable/tabmehome_search"
+            android:layout_toLeftOf="@+id/fragDanQu_ivSort"
+            android:padding="13dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+    <TextView
+        android:background="#aaaaaa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <ScrollView
+        android:id="@+id/fragDanQu_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragDanQu_rvDanQu"
+                android:divider="#eeeeee"
+                android:dividerHeight="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

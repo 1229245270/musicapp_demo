@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.musicapp.Factory.FragmentFactory;
 import com.example.musicapp.Factory.MyFragment;
+import com.example.musicapp.Module.AutoViewPager;
 import com.example.musicapp.R;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
@@ -27,6 +28,8 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
             strTitle = context.getResources().getStringArray(R.array.tabHome);
         }else if(context.getResources().getInteger(R.integer.tab_listen) == flog){
             strTitle = context.getResources().getStringArray(R.array.tabListen);
+        }else if(context.getResources().getInteger(R.integer.tab_me) == flog){
+            strTitle = context.getResources().getStringArray(R.array.tabMe);
         }
         this.flog = flog;
         this.context = context;
@@ -49,6 +52,8 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
         if(flog == context.getResources().getInteger(R.integer.tab_home)){
             fragHome_tvTitle.setTextColor(context.getResources().getColor(R.color.colorTabHomeUnSelect));
         }else if(flog == context.getResources().getInteger(R.integer.tab_listen)){
+            fragHome_tvTitle.setTextColor(context.getResources().getColor(R.color.colorTabListenUnSelect));
+        }else if(flog == context.getResources().getInteger(R.integer.tab_me)){
             fragHome_tvTitle.setTextColor(context.getResources().getColor(R.color.colorTabListenUnSelect));
         }
         return view;

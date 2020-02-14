@@ -7,4 +7,5 @@
     <color name="colorTabHomeUnSelect">#aaa</color>
     <color name="colorTabListenSelect">#000</color>
     <color name="colorTabListenUnSelect">#333333</color>
+    <color name="colorHover">#117cc7</color>
 </resources>
