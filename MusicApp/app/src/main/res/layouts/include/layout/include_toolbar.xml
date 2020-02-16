@@ -32,9 +32,9 @@
         android:layout_height="50dp" />
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/fragHome_toolBar"
-        android:padding="13dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_margin="13dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:theme="@style/ToolBarTheme"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 

@@ -87,4 +87,18 @@ public class Song {
     public void setSongLyrics(String songLyrics) {
         this.songLyrics = songLyrics;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songId=" + songId +
+                ", songName='" + songName + '\'' +
+                ", singer='" + singer + '\'' +
+                ", songPath='" + songPath + '\'' +
+                ", songHeader=" + songHeader +
+                ", songDuration=" + songDuration +
+                ", songSize=" + songSize +
+                ", songLyrics='" + songLyrics + '\'' +
+                '}';
+    }
 }

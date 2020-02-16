@@ -68,21 +68,10 @@
         android:background="#aaaaaa"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
-    <ScrollView
-        android:id="@+id/fragDanQu_scrollView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragDanQu_rvDanQu"
+        android:divider="#eeeeee"
+        android:dividerHeight="1dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fragDanQu_rvDanQu"
-                android:divider="#eeeeee"
-                android:dividerHeight="1dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="match_parent"/>
 </LinearLayout>

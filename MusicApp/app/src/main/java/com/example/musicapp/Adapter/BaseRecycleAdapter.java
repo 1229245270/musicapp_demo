@@ -1,12 +1,14 @@
 package com.example.musicapp.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,23 +34,25 @@ import java.util.List;
 import butterknife.OnItemClick;
 import butterknife.OnItemLongClick;
 
+import static com.example.musicapp.MainActivity.isPerMissRead;
+
 public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRecycleViewHolder> {
     private Context context;
     private List<T> mData;
     private LayoutInflater inflater;
     private int itemLayoutId;
     private boolean isTabListenAll = false;
-    private static final int TYPE_XINGE = 0;
-    private static final int TYPE_GEDAN = 1;
-    private static final int TYPE_ZHIBO = 2;
-    private static final int TYPE_SHIPIN = 3;
-    private static final int TYPE_PINGLUN = 4;
-    private static final int TYPE_EMPTY = 5;
-    private static final int TYPE_FOOT = 6;
-    private static final int TYPE_HEAD = 7;
+    public static final int TYPE_XINGE = 0;
+    public static final int TYPE_GEDAN = 1;
+    public static final int TYPE_ZHIBO = 2;
+    public static final int TYPE_SHIPIN = 3;
+    public static final int TYPE_PINGLUN = 4;
+    public static final int TYPE_EMPTY = 5;
+    public static final int TYPE_FOOT = 6;
     private RecyclerView recyclerView;
     private OnItemClickListener onItemClickListener;
     private View view;
+    private boolean isPerMiss = false;
 
     public BaseRecycleAdapter(Context context, List<T> mData, int itemLayoutId){
         this.context = context;
@@ -61,6 +65,13 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
         this.mData = mData;
         isTabListenAll = true;
         inflater = LayoutInflater.from(context);
+    }
+    public BaseRecycleAdapter(Context context, List<T> mData, int itemLayoutId,boolean isPerMiss){
+        this.context = context;
+        this.mData = mData;
+        this.itemLayoutId = itemLayoutId;
+        inflater = LayoutInflater.from(context);
+        this.isPerMiss = isPerMiss;
     }
 
     @Override
@@ -84,16 +95,11 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
     }
     @Override
     public int getItemViewType(int position) {
-        if(mData.get(position) instanceof Empty){
+        if(!isPerMissRead && isPerMiss){
             return TYPE_EMPTY;
-        }
-        if(mData.get(position) instanceof Foot){
+        }else if(mData.get(position) instanceof Foot){
             return TYPE_FOOT;
-        }
-        if(mData.get(position) instanceof Head){
-            return TYPE_HEAD;
-        }
-        if(mData.get(position) instanceof XinGe){
+        }else if(mData.get(position) instanceof XinGe){
             return TYPE_XINGE;
         }else if(mData.get(position) instanceof GeDan){
             return TYPE_GEDAN;
@@ -117,8 +123,6 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
         switch (viewType) {
             case TYPE_EMPTY:
                 return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_empty, parent, false));
-            case TYPE_HEAD:
-                return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_head, parent, false));
             case TYPE_FOOT:
                 return BaseRecycleViewHolder.getRecycleViewHolder(context,inflater.inflate(R.layout.item_recycleview_foot, parent, false));
         }
@@ -150,26 +154,39 @@ public abstract class BaseRecycleAdapter<T> extends RecyclerView.Adapter<BaseRec
 
     @Override
     public void onBindViewHolder(@NonNull BaseRecycleViewHolder holder, final int position) {
-        if(onItemClickListener != null){
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+        if(!isPerMissRead && isPerMiss){
+            holder.getButton(R.id.button).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onItemClickListener.onItemClick(position);
+                    Toast.makeText(context, "点击了", Toast.LENGTH_SHORT).show();
                 }
             });
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    onItemClickListener.onItemLongClick(position);
-                    return false;
-                }
-            });
+        }else{
+            if(onItemClickListener != null && (getItemViewType(position) != TYPE_FOOT)){
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onItemClickListener.onItemClick(position);
+                    }
+                });
+                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        onItemClickListener.onItemLongClick(position);
+                        return false;
+                    }
+                });
+            }
+            convert(holder, mData.get(position), position);
         }
-        convert(holder, mData.get(position), position);
+
     }
 
     @Override
     public int getItemCount() {
+        if(!isPerMissRead && isPerMiss){
+            return 1;
+        }
         return mData.size();
     }
 

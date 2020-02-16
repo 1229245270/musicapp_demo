@@ -1,6 +1,10 @@
 package com.example.musicapp.Service;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
@@ -14,6 +18,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.example.musicapp.MainActivity;
+import com.example.musicapp.R;
+
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
@@ -23,7 +30,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import static com.example.musicapp.Service.MusicBroadcast.MAINACTIVITY;
+import static com.example.musicapp.MusicActivity.isRunable;
+import static com.example.musicapp.Service.MusicBroadcast.MAINACTIVITY_MSG;
+import static com.example.musicapp.Service.MusicBroadcast.MAINACTIVITY_SEEKBAR;
+import static com.example.musicapp.Service.MusicBroadcast.MUSICACTIVITY_MSG;
+import static com.example.musicapp.Service.MusicBroadcast.MUSICACTIVITY_SEEKBAR;
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";
@@ -31,12 +42,16 @@ public class MusicService extends Service {
     private AudioManager audioManager;
     private Timer timer;
     private String hash;
-    Boolean isPlayComplete = false;//判断播放是否结束
+    public static Boolean isPlayComplete = true;//判断播放是否结束
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     @Override
     public void onCreate() {
         super.onCreate();
         Log.v(TAG,"启动音乐播放服务");
         mediaPlayer = new MediaPlayer();
+        preferences = getApplicationContext().getSharedPreferences("mSetting",MODE_PRIVATE);
+        editor = preferences.edit();
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         mediaPlayer.setWakeMode(getApplicationContext(), PowerManager.PARTIAL_WAKE_LOCK);//设定CUP锁定
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//播放结束监听事件
@@ -208,22 +223,30 @@ public class MusicService extends Service {
             @Override
             public void run() {
                 //获得歌曲当前播放进度
-                Intent intent = new Intent();
-                intent.putExtra("type",MAINACTIVITY);
+                Intent intent = new Intent(getApplicationContext(),MusicBroadcast.class);
+                intent.setAction("com.example.musicapp.Service.MusicBroadcast");
                 intent.putExtra("current",getCurrentPosition());
-                intent.putExtra("isPlayComplete",false);
                 if(mediaPlayer.isPlaying()){
+                    intent.putExtra("isPlay",true);
+                    if(isRunable){
+                        intent.putExtra("type",MUSICACTIVITY_SEEKBAR);
+                        sendBroadcast(intent);
+                    }
+                    intent.putExtra("type",MAINACTIVITY_SEEKBAR);
                     sendBroadcast(intent);
+                    editor.putInt("current",getCurrentPosition());
+                    editor.commit();
                 }
                 else{
-                    if(isPlayComplete){
-                        //播放结束
-                        intent.putExtra("isPlayComplete",true);
+                    intent.putExtra("isPlay",false);
+                    if(isRunable){
+                        intent.putExtra("type",MUSICACTIVITY_SEEKBAR);
+                        sendBroadcast(intent);
                     }
-                    else{
-                        intent.putExtra("isPlayComplete",false);
-                    }
+                    intent.putExtra("type",MAINACTIVITY_SEEKBAR);
                     sendBroadcast(intent);
+                    editor.putInt("current",getCurrentPosition());
+                    editor.commit();
                     Log.v(TAG,"结束TimeTask");
                     timer.cancel();
                 }
@@ -233,13 +256,28 @@ public class MusicService extends Service {
 
     //发送播放信息
     public void SeekPlayMessage(Intent intent){
-        intent.putExtra("type",MAINACTIVITY);
-        intent.putExtra("duration",getDuration());
-        intent.putExtra("current",getCurrentPosition());
-        intent.putExtra("isPlayComplete",false);
-        sendBroadcast(intent);
+        Intent intent1 = new Intent(getApplicationContext(),MusicBroadcast.class);
+        intent1.putExtra("isPlay",true);
+        intent1.putExtra("songName",intent.getStringExtra("songName"));
+        intent1.putExtra("singer",intent.getStringExtra("singer"));
+        intent1.putExtra("duration",getDuration());
+        intent1.putExtra("current",getCurrentPosition());
+        intent1.putExtra("songId",intent.getIntExtra("songId",0));
+        intent1.setAction("com.example.musicapp.Service.MusicBroadcast");
+        if(isRunable){
+            intent1.putExtra("type",MUSICACTIVITY_MSG);
+            sendBroadcast(intent1);
+        }
+        intent1.putExtra("header",intent.getIntExtra("header", R.drawable.include_default));
+        intent1.putExtra("type",MAINACTIVITY_MSG);
+        sendBroadcast(intent1);
+        editor.putString("songName",intent.getStringExtra("songName"));
+        editor.putString("singer",intent.getStringExtra("singer"));
+        editor.putInt("duration",getDuration());
+        editor.putInt("songId",intent.getIntExtra("songId",0));
+        editor.putInt("current",getCurrentPosition());
+        editor.commit();
     }
-
     //获取播放状态
     public boolean isPlaying(){
         Boolean isPlaying = false;

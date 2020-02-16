@@ -14,38 +14,38 @@ public class MusicUtil {
     private static ContentResolver contentResolver;
 
     public static List<Song> getDanQuData(Context context){
-        List<Song> danQuList = new ArrayList<Song>();
+        List<Song> songList = new ArrayList<Song>();
         contentResolver = context.getContentResolver();
         Cursor cursor = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,null,null,null,MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
         if(cursor != null){
             while (cursor.moveToNext()){
-                Song danQu = new Song();
-                danQu.setSongName(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)));
-                danQu.setSinger(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)));
-                danQu.setSongPath(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)));
-                danQu.setSongDuration(cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)));
-                danQu.setSongId(cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)));
+                Song song = new Song();
+                song.setSongName(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME)));
+                song.setSinger(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST)));
+                song.setSongPath(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)));
+                song.setSongDuration(cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION)));
+                song.setSongId(cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)));
+                song.setSongSize(cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE)));
                 //int n = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
                 //int n = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Artists.Albums));
                 //song.setSongHeader(getAlbumArt(n));
-                /*if(danQu.getSongSize() > 1000 * 800){
-                    if(danQu.getSongName().contains("-")){
-                        String[] strings = danQu.getSongName().split(" - ");//左右俩边有空格
-                        danQu.setSinger(strings[0]);
-                        danQu.setSongName(strings[1]);
+                if(song.getSongSize() > 1000 * 800){
+                    if(song.getSongName().contains("-")){
+                        String[] strings = song.getSongName().split(" - ");//左右俩边有空格
+                        song.setSinger(strings[0]);
+                        song.setSongName(strings[1]);
                     }
                 }
                 if(!song.getSinger().equals("<unknown>")){
                     songList.add(song);
-                    i++;
-                }*/
+                }
             }
         }
         if(cursor != null){
             cursor.close();
         }
 
-        return danQuList;
+        return songList;
     }
 
     /*private static String getAlbumArt(int album_id){

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MusicActivity">
+
+    <ImageView
+        android:id="@+id/musicAty_ivBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/musicAty_ivPlayFacility"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/musicAty_ivShare"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivShare"
+        app:srcCompat="@drawable/music_diannao" />
+
+    <ImageView
+        android:id="@+id/musicAty_ivShare"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/music_share" />
+
+    <TextView
+        android:id="@+id/musicAty_tvSongName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="歌名"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/musicAty_ivPlayFacility"
+        app:layout_constraintStart_toEndOf="@+id/musicAty_ivBack"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivPlayFacility" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/musicAty_tvSongName"
+        app:layout_constraintStart_toStartOf="@+id/musicAty_tvSongName"
+        app:layout_constraintTop_toBottomOf="@+id/musicAty_tvSongName">
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/musicAty_tvSinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:text="歌手"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/musicAty_tvAttention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/music_border"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="关 注"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/musicAty_tvTone"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/music_border"
+            android:padding="6dp"
+            android:text="标准﹀"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/musicAty_tvSoundEffect"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/music_border"
+            android:padding="6dp"
+            android:text="蛇蝎音效"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/musicAty_tvBackground"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/music_border"
+            android:padding="6dp"
+            android:text="封面"
+            android:textColor="#ffffff" />
+
+        <Switch
+            android:id="@+id/musicAty_switchVideo"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/music_border"
+            android:padding="6dp"
+            android:text="视频"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragHome_lLTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <com.example.musicapp.Module.CircularImageView
+        android:id="@+id/musicAty_ivPlayShow"
+        app:isCircle="true"
+        android:background="@drawable/music_roundplay"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="30dp"
+        android:padding="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/music_play" />
+
+    <com.example.musicapp.Module.CircularImageView
+        android:background="@drawable/music_roundplay"
+        app:isCircle="true"
+        android:id="@+id/musicAty_ivPlayUp"
+        android:padding="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivPlayShow"
+        app:layout_constraintEnd_toStartOf="@+id/musicAty_ivPlayShow"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivPlayShow"
+        app:srcCompat="@drawable/music_up" />
+
+    <ImageView
+        android:id="@+id/musicAty_ivPlayMenu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/music_menu" />
+
+    <ImageView
+        android:id="@+id/musicAty_ivPlayOrder"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/music_shunxu" />
+
+    <com.example.musicapp.Module.CircularImageView
+        android:id="@+id/musicAty_ivPlayNext"
+        android:background="@drawable/music_roundplay"
+        android:padding="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:isCircle="true"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivPlayShow"
+        app:layout_constraintStart_toEndOf="@+id/musicAty_ivPlayShow"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivPlayShow"
+        app:srcCompat="@drawable/music_next" />
+
+    <ImageView
+        android:id="@+id/musicAty_ivRinging"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/musicAty_ivPlayShow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/music_ringing" />
+
+    <SeekBar
+        android:id="@+id/musicAty_seekBar"
+        android:progress="0"
+        android:splitTrack="false"
+        android:thumb="@drawable/music_thumb"
+        android:progressDrawable="@drawable/music_progress_drawable"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivRinging"
+        app:layout_constraintEnd_toStartOf="@+id/musicAty_tvTotalTime"
+        app:layout_constraintStart_toEndOf="@+id/musicAty_tvCurrentTime"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivRinging" />
+
+    <TextView
+        android:id="@+id/musicAty_tvPlaySpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:gravity="center"
+        android:background="@drawable/music_border"
+        android:text="倍速"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivRinging"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivRinging" />
+
+    <TextView
+        android:id="@+id/musicAty_tvTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="4:00"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivRinging"
+        app:layout_constraintEnd_toStartOf="@+id/musicAty_tvPlaySpeed"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivRinging" />
+
+    <TextView
+        android:id="@+id/musicAty_tvCurrentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="0:00"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/musicAty_ivRinging"
+        app:layout_constraintStart_toEndOf="@+id/musicAty_ivRinging"
+        app:layout_constraintTop_toTopOf="@+id/musicAty_ivRinging" />
+
+    <LinearLayout
+        android:id="@+id/fragHome_lLTop"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/musicAty_ivRinging"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/musicAty_ivLove"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:srcCompat="@drawable/music_getlike" />
+
+        <ImageView
+            android:id="@+id/musicAty_ivReVideo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:srcCompat="@drawable/music_mv" />
+
+        <ImageView
+            android:id="@+id/musicAty_ivDownLoad"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:srcCompat="@drawable/music_download" />
+
+        <ImageView
+            android:id="@+id/musicAty_ivComment"
+            android:padding="8dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/music_comment" />
+
+        <ImageView
+            android:id="@+id/musicAty_ivMore"
+            android:padding="8dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/music_more" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

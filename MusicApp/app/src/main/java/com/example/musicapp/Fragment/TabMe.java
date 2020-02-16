@@ -28,7 +28,7 @@ import java.util.List;
 
 public class TabMe extends MyFragment {
     private TextView tabMe_tvMyName,tabMe_tvTime,tabMe_tvLocality,tabMe_tvLove,tabMe_tvDownLoad,tabMe_tvNewSong;
-    private static TextView tabMe_tvLocalityNum;
+    private static TextView tabMe_tvLocalityNum,tabMe_tvLoveNum,tabMe_tvDownLoadNum,tabMe_tvNewSongNum;
     private ImageView tabMe_ivMyHeader,tabMe_ivVIP,tabMe_ivLeave,tabMe_ivIdentity,tabMe_ivInformation;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
@@ -39,8 +39,19 @@ public class TabMe extends MyFragment {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            if(msg.what == 0){
-                tabMe_tvLocalityNum.setText(String.valueOf(msg.arg1));
+            switch (msg.what){
+                case 0:
+                    tabMe_tvLocalityNum.setText(String.valueOf(msg.arg1));
+                    break;
+                case 1:
+                    tabMe_tvLoveNum.setText(String.valueOf(msg.arg1));
+                    break;
+                case 2:
+                    tabMe_tvDownLoadNum.setText(String.valueOf(msg.arg1));
+                    break;
+                case 3:
+                    tabMe_tvNewSongNum.setText(String.valueOf(msg.arg1));
+                    break;
             }
         }
     };
@@ -60,6 +71,9 @@ public class TabMe extends MyFragment {
         tabMe_ivIdentity = view.findViewById(R.id.tabMe_ivIdentity);
         tabMe_ivInformation = view.findViewById(R.id.tabMe_ivInformation);
         tabMe_tvLocalityNum = view.findViewById(R.id.tabMe_tvLocalityNum);
+        tabMe_tvLoveNum = view.findViewById(R.id.tabMe_tvLoveNum);
+        tabMe_tvDownLoadNum = view.findViewById(R.id.tabMe_tvDownLoadNum);
+        tabMe_tvNewSongNum= view.findViewById(R.id.tabMe_tvNewSongNum);
 
         tabMe_menu = view.findViewById(R.id.tabMe_menu);
         tabMe_menu.getItemTabMe_ivIncrease().setImageResource(R.drawable.tabme_increase);
@@ -68,6 +82,11 @@ public class TabMe extends MyFragment {
 
         preferences = getContext().getSharedPreferences("mSetting",Context.MODE_PRIVATE);
         editor = preferences.edit();
+
+        tabMe_tvLocalityNum.setText(String.valueOf(preferences.getInt("localitySongNumber",0)));
+        tabMe_tvLoveNum.setText(String.valueOf(preferences.getInt("loveNumber",0)));
+        tabMe_tvDownLoadNum.setText(String.valueOf(preferences.getInt("downLoadNumber",0)));
+        tabMe_tvNewSongNum.setText(String.valueOf(preferences.getInt("newSongNumber",0)));
         tabMe_tvLocality.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

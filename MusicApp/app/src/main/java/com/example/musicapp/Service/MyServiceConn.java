@@ -2,6 +2,7 @@ package com.example.musicapp.Service;
 
 import android.content.ComponentName;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -27,6 +28,7 @@ public class MyServiceConn implements ServiceConnection {
     public void play(){
         Log.v(TAG,"调用MusicService里的方法play");
         if(filePath != null){
+
             musicInterface.play(filePath);
         }
     }

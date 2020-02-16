@@ -23,7 +23,7 @@ public class Data {
             COL_SONGPATH + " text," +
             COL_SONGDURATION + " integer," +
             COL_SONGHEADER + " text," +
-            COL_SONGLYRICS + " text," +
+            COL_SONGLYRICS + " text" +
             ")";
 
     public static final String SQL_SELECT_ALL_PLAYLIST = "select * from " + TABLE_PLAYLIST;
