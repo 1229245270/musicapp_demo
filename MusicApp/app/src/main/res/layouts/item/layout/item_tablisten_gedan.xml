@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <com.example.musicapp.Module.CircularImageView
+        android:scaleType="fitXY"
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -22,6 +23,8 @@
 
     <TextView
         android:id="@+id/tag"
+        android:textSize="11sp"
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -37,8 +40,6 @@
         android:id="@+id/listener"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:layout_marginBottom="4dp"
         android:drawableLeft="@drawable/item_all_play"
         android:text="3507.1万"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:ellipsize="end"
@@ -71,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ellipsize="end"
-        android:maxLines="3"
+        android:maxLines="2"
         android:text="根据你的收藏的《Kaskade、Project 46 —Last Chance》推荐"
         android:textColor="#666"
         app:layout_constraintEnd_toEndOf="@+id/songListName"
@@ -84,8 +86,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/item_gedan_user"
         android:drawablePadding="2dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="烈火小子"
         android:textColor="#666"
         app:layout_constraintBottom_toBottomOf="@+id/listener"
@@ -114,5 +119,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/getLike"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/getLike"
-        app:srcCompat="@drawable/include_default" />
+        app:srcCompat="@drawable/item_all_share" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -23,13 +24,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.musicapp.Adapter.DrawableAdapter;
+import com.example.musicapp.DateBase.UsersTable;
 import com.example.musicapp.Factory.FragmentFactory;
 import com.example.musicapp.Factory.MyFragment;
 import com.example.musicapp.Model.DrawableBottom;
 import com.example.musicapp.Model.DrawableTop;
+import com.example.musicapp.Model.Song;
 import com.example.musicapp.Module.BottomDialog;
 import com.example.musicapp.Service.MusicService;
 import com.example.musicapp.Service.MyServiceConn;
+import com.example.musicapp.Utils.SongListUtil;
+import com.squareup.picasso.Picasso;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
@@ -42,15 +49,13 @@ public class MainActivity extends AppCompatActivity {
     private GridView drawable_GvTop;
     private ListView drawable_LvBottom;
     private TextView include_tvMusicName,include_tvMusicAuthor;
-    private ImageButton include_ibMenu,include_ibShow;
+    private ImageButton include_ibMenu,include_ibShow,include_ibNext;
     private ImageView include_ivMusicHeader;
     private SeekBar include_seekBar;
-    private ArrayList<Object> drawableTops = new ArrayList<>();
-    private ArrayList<Object> drawableBottoms = new ArrayList<>();
+    private ArrayList<Object> drawableTops,drawableBottoms;
     private View include_music_bar;
     private MyFragment homeFragment;
-    private FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    public static boolean isPerMissRead = true;
+    private FragmentTransaction transaction;
     private int REQUEST_CODE = 1201;
     private static MainActivity instance;
     public static MainActivity getInstance(){
@@ -62,10 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == REQUEST_CODE){
-            if(permissions[0].equals(Manifest.permission.READ_EXTERNAL_STORAGE) && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                isPerMissRead = true;
-            }else{
-                isPerMissRead = false;
+            if(!(permissions[0].equals(Manifest.permission.READ_EXTERNAL_STORAGE) && grantResults[0] == PackageManager.PERMISSION_GRANTED)){
                 Toast.makeText(this,"读写权限授权失败",Toast.LENGTH_SHORT).show();
             }
         }
@@ -75,29 +77,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawableTops = new ArrayList<>();
+        drawableBottoms = new ArrayList<>();
+        transaction = getSupportFragmentManager().beginTransaction();
         if(Build.VERSION.SDK_INT >= 21){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     |View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         final SharedPreferences preferences = getSharedPreferences("mSetting",MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
+        final SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("current",0);
         editor.commit();
         drawable_GvTop = findViewById(R.id.drawable_GvTop);
         drawable_LvBottom = findViewById(R.id.drawable_LvBottom);
 
-        drawableTops.add(new DrawableTop(R.drawable.include_default,"扫一扫"));
-        drawableTops.add(new DrawableTop(R.drawable.include_default,"我的二维码"));
-        drawableTops.add(new DrawableTop(R.drawable.include_default,"我的好友"));
-        drawableTops.add(new DrawableTop(R.drawable.include_default,"驾驶模式"));
+        drawableTops.add(new DrawableTop(R.drawable.drawlayout_saoyisao,"扫一扫"));
+        drawableTops.add(new DrawableTop(R.drawable.drawlayout_erweima,"我的二维码"));
+        drawableTops.add(new DrawableTop(R.drawable.drawlayout_haoyou,"我的好友"));
+        drawableTops.add(new DrawableTop(R.drawable.drawlayout_jiashi,"驾驶模式"));
         DrawableAdapter drawableAdapter = new DrawableAdapter(this,drawableTops);
         drawable_GvTop.setAdapter(drawableAdapter);
 
-        drawableBottoms.add(new DrawableBottom(R.drawable.include_default,"消息中心",true,"",0));
-        drawableBottoms.add(new DrawableBottom(R.drawable.include_default,"皮肤中心",false,"",0));
-        drawableBottoms.add(new DrawableBottom(R.drawable.include_default,"皮肤中心",false,"点击添加好友",R.drawable.include_default));
-        drawableBottoms.add(new DrawableBottom(R.drawable.include_default,"皮肤中心",true,"哈哈哈",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_dmail,"消息中心",true,"",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_skin,"皮肤中心",false,"这里有好看的皮肤哦",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_sketch,"会员中心",false,"有钱才能变强",R.drawable.drawlayout_huiyuan));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_cspace,"私人云盘",false,"",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_region,"智能定位",true,"",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_yanchu_line,"铃声彩铃",false,"",0));
+        drawableBottoms.add(new DrawableBottom(R.drawable.drawlayout_cart,"购物商城",false,"这里有好东西",0));
         drawableAdapter = new DrawableAdapter(this,drawableBottoms);
         drawable_LvBottom.setAdapter(drawableAdapter);
 
@@ -112,12 +120,13 @@ public class MainActivity extends AppCompatActivity {
         include_ibMenu = include_music_bar.findViewById(R.id.include_ibMenu);
         include_seekBar = include_music_bar.findViewById(R.id.include_seekBar);
         include_ibShow = include_music_bar.findViewById(R.id.include_ibShow);
+        include_ibNext = include_music_bar.findViewById(R.id.include_ibNext);
         include_ivMusicHeader = include_music_bar.findViewById(R.id.include_ivMusicHeader);
         include_tvMusicName = include_music_bar.findViewById(R.id.include_tvMusicName);
         include_tvMusicAuthor = include_music_bar.findViewById(R.id.include_tvMusicAuthor);
         include_seekBar.setMax(preferences.getInt("duration",0));
         include_seekBar.setProgress(preferences.getInt("current",0));
-        include_ivMusicHeader.setImageResource(preferences.getInt("header",R.drawable.include_default));
+        Picasso.get().load(preferences.getString("header",null)).error(R.drawable.include_default).into(include_ivMusicHeader);
         include_tvMusicName.setText(preferences.getString("songName","songName"));
         include_tvMusicAuthor.setText(preferences.getString("singer","singer"));
         include_ibShow.setOnClickListener(new View.OnClickListener() {
@@ -135,11 +144,25 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, MusicService.class);
                     intent.putExtra("songName", preferences.getString("songName","songName"));
                     intent.putExtra("singer", preferences.getString("singer","singer"));
-                    intent.putExtra("header", preferences.getInt("header",R.drawable.include_default));
-                    intent.putExtra("songId", preferences.getInt("songId",0));
+                    intent.putExtra("fileName",preferences.getString("fileName","fileName"));
+                    intent.putExtra("header", preferences.getString("header",""));
+                    intent.putExtra("lyrics",preferences.getString("lyrics",""));
+                    intent.putExtra("commentNum",preferences.getInt("commentNum",0));
+                    intent.putExtra("mv",preferences.getString("mv",""));
+                    intent.putExtra("createDate",preferences.getLong("createDate",0));
                     //设置Action的目的是为了让onBind()调用多次
-                    intent.setAction(String.valueOf(preferences.getInt("songId",0)));
+                    intent.setAction(songPath);
                     bindService(intent,conn, Context.BIND_AUTO_CREATE);
+                }
+            }
+        });
+        include_ibNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(musicInterface != null) {
+                    musicInterface.nextSong();
+                }else{
+                    SongListUtil.nextSong(MainActivity.this);
                 }
             }
         });
@@ -184,9 +207,11 @@ public class MainActivity extends AppCompatActivity {
 
         homeFragment = FragmentFactory.createFragment(10);
         if(!homeFragment.isAdded()){
-            transaction.add(R.id.frameLayout_main,homeFragment,"homeFragment");
+            transaction.add(R.id.frameLayout_main,homeFragment,"homeFragment").show(homeFragment);
+        }else{
+            transaction.show(homeFragment);
         }
-        transaction.show(homeFragment).commit();
+        transaction.commit();
         instance = this;
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -197,5 +222,11 @@ public class MainActivity extends AppCompatActivity {
                 },REQUEST_CODE);
             }
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

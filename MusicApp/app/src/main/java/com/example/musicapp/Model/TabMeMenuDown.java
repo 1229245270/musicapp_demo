@@ -3,13 +3,13 @@ package com.example.musicapp.Model;
 import android.view.View;
 
 public class TabMeMenuDown {
-    private int icon;
+    private Object icon;
     private String Name;
     private int SongNum;
     private int SongDownNum;
     private String Hint;
 
-    public TabMeMenuDown(int icon, String name, int songNum, int songDownNum, String hint) {
+    public TabMeMenuDown(Object icon, String name, int songNum, int songDownNum, String hint) {
         this.icon = icon;
         Name = name;
         SongNum = songNum;
@@ -17,11 +17,11 @@ public class TabMeMenuDown {
         Hint = hint;
     }
 
-    public int getIcon() {
+    public Object getIcon() {
         return icon;
     }
 
-    public void setIcon(int icon) {
+    public void setIcon(Object icon) {
         this.icon = icon;
     }
 
@@ -55,5 +55,16 @@ public class TabMeMenuDown {
 
     public void setHint(String hint) {
         Hint = hint;
+    }
+
+    @Override
+    public String toString() {
+        return "TabMeMenuDown{" +
+                "icon=" + icon +
+                ", Name='" + Name + '\'' +
+                ", SongNum=" + SongNum +
+                ", SongDownNum=" + SongDownNum +
+                ", Hint='" + Hint + '\'' +
+                '}';
     }
 }

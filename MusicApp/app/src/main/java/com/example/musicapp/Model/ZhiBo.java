@@ -1,21 +1,21 @@
 package com.example.musicapp.Model;
 
 public class ZhiBo {
-    private int image;
+    private String image;
     private String title;
     private String intro;
 
-    public ZhiBo(int image, String title, String intro) {
+    public ZhiBo(String image, String title, String intro) {
         this.image = image;
         this.title = title;
         this.intro = intro;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

@@ -8,4 +8,6 @@
     <color name="colorTabListenSelect">#000</color>
     <color name="colorTabListenUnSelect">#333333</color>
     <color name="colorHover">#117cc7</color>
+    <color name="itemGrey">#a1a1a2</color>
+    <color name="itemWhite">#ffffff</color>
 </resources>

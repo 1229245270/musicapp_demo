@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@drawable/music_background"
     tools:context=".MusicActivity">
 
     <ImageView
@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/white_back" />
 
     <ImageView
         android:id="@+id/musicAty_ivPlayFacility"
@@ -155,7 +155,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/lrcView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="8dp"
@@ -340,7 +340,7 @@
             android:padding="8dp"
             app:srcCompat="@drawable/music_download" />
 
-        <ImageView
+        <com.example.musicapp.Module.NumberImageView
             android:id="@+id/musicAty_ivComment"
             android:padding="8dp"
             android:layout_width="0dp"

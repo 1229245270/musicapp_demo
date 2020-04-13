@@ -3,13 +3,13 @@ package com.example.musicapp.Model;
 public class PingLun {
     private String content;
     private String songName;
-    private int commentatorHeader;
-    private int songHeader;
+    private String commentatorHeader;
+    private String songHeader;
     private String commentator;
     private int getLike;
     private int comment;
 
-    public PingLun(String content, String songName, int commentatorHeader, int songHeader, String commentator, int getLike, int comment) {
+    public PingLun(String content, String songName, String commentatorHeader, String songHeader, String commentator, int getLike, int comment) {
         this.content = content;
         this.songName = songName;
         this.commentatorHeader = commentatorHeader;
@@ -35,19 +35,19 @@ public class PingLun {
         this.songName = songName;
     }
 
-    public int getCommentatorHeader() {
+    public String getCommentatorHeader() {
         return commentatorHeader;
     }
 
-    public void setCommentatorHeader(int commentatorHeader) {
+    public void setCommentatorHeader(String commentatorHeader) {
         this.commentatorHeader = commentatorHeader;
     }
 
-    public int getSongHeader() {
+    public String getSongHeader() {
         return songHeader;
     }
 
-    public void setSongHeader(int songHeader) {
+    public void setSongHeader(String songHeader) {
         this.songHeader = songHeader;
     }
 

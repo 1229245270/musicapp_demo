@@ -8,6 +8,7 @@ import android.util.Log;
 import static com.example.musicapp.DateBase.Data.DB_NAME;
 import static com.example.musicapp.DateBase.Data.DB_VERSION;
 import static com.example.musicapp.DateBase.Data.SQL_TB_PALYLIST;
+import static com.example.musicapp.DateBase.Data.SQL_TB_SEARCHSESSION;
 
 /**
  * Created by PC on 2019/6/7.
@@ -24,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_TB_PALYLIST);
+        db.execSQL(SQL_TB_SEARCHSESSION);
         Log.v("database","创建表成功");
     }
 

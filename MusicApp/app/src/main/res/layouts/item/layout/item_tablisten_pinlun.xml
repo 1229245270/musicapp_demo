@@ -7,6 +7,8 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:ellipsize="end"
+        android:maxLines="6"
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +21,8 @@
         android:layout_height="30dp">
 
         <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
             android:id="@+id/songName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,6 +52,8 @@
             app:isCircle="true" />
 
         <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
             android:id="@+id/author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

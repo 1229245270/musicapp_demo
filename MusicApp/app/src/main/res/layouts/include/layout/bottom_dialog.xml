@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#eee"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/drawable_radius"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
     android:paddingTop="0dp"
-    android:layout_height="260dp">
+    android:layout_height="360dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <TextView
             android:id="@+id/botDig_tv"
+            android:drawableLeft="@drawable/item_dialog_shunxu"
             android:text="顺序播放"
             android:drawablePadding="8dp"
             android:textSize="18sp"
@@ -21,12 +22,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <ImageView
+            android:src="@drawable/item_dialog_delete"
             android:id="@+id/botDig_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_gravity="right|center"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
     </LinearLayout>
-    <ListView
-        android:id="@+id/botDig_lv"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/botDig_rv"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
+    <TextView
+        android:textColor="#000"
+        android:gravity="center"
+        android:text="向下滑动加载更多...."
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 </LinearLayout>

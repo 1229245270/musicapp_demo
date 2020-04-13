@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/tablist_item_hover"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="50dp">
+    <com.example.musicapp.Module.CircularImageView
+        android:id="@+id/header"
+        android:visibility="gone"
+        app:isCircle="true"
+        android:src="@drawable/include_default"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/rankId"
+        android:textColor="#000"
+        android:gravity="center"
+        android:text="01"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="40dp">
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/songName"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:text="歌名"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#666"
+            android:id="@+id/singer"
+            android:text="歌手"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/getlike"
+        android:visibility="gone"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/item_dialog_getlike"
+        android:padding="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    <ImageView
+        android:id="@+id/delete"
+        android:src="@drawable/item_dialog_delete"
+        android:padding="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.musicapp.Fragment;
 
+import android.os.Message;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,44 +9,60 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.musicapp.Adapter.BaseRecycleAdapter;
 import com.example.musicapp.Adapter.BaseRecycleViewHolder;
 import com.example.musicapp.Factory.MyFragment;
+import com.example.musicapp.Model.CommentList.CommentList;
+import com.example.musicapp.Model.CommentList.data;
 import com.example.musicapp.Model.PingLun;
 import com.example.musicapp.Module.AutoLayoutManage;
 import com.example.musicapp.Module.AutoViewPager;
 import com.example.musicapp.R;
+import com.example.musicapp.Utils.RetrofitUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.musicapp.Utils.RetrofitUtil.GetCommentListForGetLike;
+
 public class TabListenPingLun extends MyFragment {
     private RecyclerView recyclerView;
-    private List<PingLun> list = new ArrayList<>();
+    private BaseRecycleAdapter<data> adapter;
+
     @Override
     public View initView() {
         View view = View.inflate(getContext(), R.layout.fragment_listen_pinglun,null);
-        for(int i = 0;i < 5;i++){
-            list.add(new PingLun("巴拉巴拉巴拉二次元巴拉巴拉巴拉二次元巴拉巴拉巴拉二次元","《负重一万斤长大》-太一",R.drawable.include_default,
-                    R.drawable.include_default,"小说家",3661,138));
-        }
         recyclerView = view.findViewById(R.id.recycleView);
-        BaseRecycleAdapter<PingLun> baseRecycleAdapter = new BaseRecycleAdapter<PingLun>(getContext(),list,R.layout.item_tablisten_pinlun) {
-            @Override
-            public void convert(BaseRecycleViewHolder holder, PingLun item, int position) {
-                holder.setText(R.id.content,((PingLun) item).getContent());
-                holder.setText(R.id.songName,((PingLun) item).getSongName());
-                holder.setImageResource(R.id.songHeader,((PingLun) item).getSongHeader());
-                holder.setText(R.id.author,((PingLun) item).getCommentator());
-                holder.setImageResource(R.id.authorHeader,((PingLun) item).getCommentatorHeader());
-                holder.setText(R.id.getLike,((PingLun) item).getGetLike() + "");
-                holder.setText(R.id.comment,((PingLun) item).getComment() + "");
-            }
-        };
-        recyclerView.setLayoutManager(new AutoLayoutManage(getContext(), LinearLayoutManager.VERTICAL,false));
-        recyclerView.setAdapter(baseRecycleAdapter);
+
         return view;
     }
 
     @Override
     public void loadData() {
-
+        RetrofitUtil retrofitUtil = new RetrofitUtil(getContext(),GetCommentListForGetLike,null,new int[]{0,10});
+        retrofitUtil.setAnInterface(new RetrofitUtil.AnInterface() {
+            @Override
+            public void setObject(Object object) {
+                CommentList commentList = (CommentList) object;
+                if(commentList != null){
+                    List<data> listData = commentList.getData();
+                    adapter = new BaseRecycleAdapter<data>(getContext(),listData,R.layout.item_tablisten_pinlun) {
+                        @Override
+                        public void convert(BaseRecycleViewHolder holder, data item, int position) {
+                            holder.setText(R.id.content,item.getCommentText());
+                            holder.setText(R.id.songName,item.getFileName());
+                            holder.setImageResource(R.id.songHeader,item.getSongImage());
+                            holder.setText(R.id.author,item.getUserName());
+                            holder.setImageResource(R.id.authorHeader,item.getUserHeader());
+                            holder.setText(R.id.getLike,String.valueOf(item.getGetLike()));
+                            holder.setText(R.id.comment,String.valueOf(item.getGetComment()));
+                        }
+                    };
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+        });
     }
 }

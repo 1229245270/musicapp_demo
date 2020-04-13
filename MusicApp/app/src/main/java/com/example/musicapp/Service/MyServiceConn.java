@@ -27,8 +27,8 @@ public class MyServiceConn implements ServiceConnection {
 
     public void play(){
         Log.v(TAG,"调用MusicService里的方法play");
+        Log.v("filePath",filePath);
         if(filePath != null){
-
             musicInterface.play(filePath);
         }
     }

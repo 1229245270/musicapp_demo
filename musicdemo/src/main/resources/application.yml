@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbmusic?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: on
+  resources:
+    static-locations: classpath:/songPath/
+  servlet:
+    multipart:
+      max-file-size: 100MB
+server:
+  servlet:
+    session:
+      timeout: 10m

@@ -15,6 +15,10 @@ import com.example.musicapp.Fragment.TabMeGeShou;
 import com.example.musicapp.Fragment.TabMeHome;
 import com.example.musicapp.Fragment.TabMeMV;
 import com.example.musicapp.Fragment.TabMeZhuanJi;
+import com.example.musicapp.Fragment.TabSearch;
+import com.example.musicapp.Fragment.TabSearchResult;
+import com.example.musicapp.Fragment.TabSongList;
+import com.example.musicapp.Fragment.TabUserHeader;
 import com.example.musicapp.Module.AutoViewPager;
 
 import java.util.HashMap;
@@ -36,6 +40,12 @@ public class FragmentFactory {
                     break;
                 case 13:
                     myFragment = new TabLook();
+                    break;
+                case 21:
+                    myFragment = new TabSearch();
+                    break;
+                case 22:
+                    myFragment = new TabSearchResult();
                     break;
                 case 121:
                     myFragment = new TabListenAll();
@@ -69,6 +79,12 @@ public class FragmentFactory {
                     break;
                 case 114:
                     myFragment = new TabMeZhuanJi();
+                    break;
+                case 115:
+                    myFragment = new TabUserHeader();
+                    break;
+                case 116:
+                    myFragment = new TabSongList();
                     break;
 
             }

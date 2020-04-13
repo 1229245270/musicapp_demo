@@ -1,24 +1,35 @@
 package com.example.musicapp.Model;
 
 public class XinGe {
-    private int image;
+    private String fileName;
     private String songName;
     private String singer;
-    private int comment;
+    private String songHeader;
+    private String songLyrics;
+    private boolean isSelect;
+    private String songPath;
+    private String songMv;
+    private long createDate;
+    private int commentNum;
 
-    public XinGe(int image, String songName, String singer, int comment) {
-        this.image = image;
+    public XinGe(String fileName, String songName, String singer, String songHeader, String songLyrics, boolean isSelect, String songPath, String songMv, int commentNum) {
+        this.fileName = fileName;
         this.songName = songName;
         this.singer = singer;
-        this.comment = comment;
+        this.songHeader = songHeader;
+        this.songLyrics = songLyrics;
+        this.isSelect = isSelect;
+        this.songPath = songPath;
+        this.songMv = songMv;
+        this.commentNum = commentNum;
     }
 
-    public int getImage() {
-        return image;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getSongName() {
@@ -37,11 +48,59 @@ public class XinGe {
         this.singer = singer;
     }
 
-    public int getComment() {
-        return comment;
+    public String getSongHeader() {
+        return songHeader;
     }
 
-    public void setComment(int comment) {
-        this.comment = comment;
+    public void setSongHeader(String songHeader) {
+        this.songHeader = songHeader;
+    }
+
+    public String getSongLyrics() {
+        return songLyrics;
+    }
+
+    public void setSongLyrics(String songLyrics) {
+        this.songLyrics = songLyrics;
+    }
+
+    public boolean isSelect() {
+        return isSelect;
+    }
+
+    public void setSelect(boolean select) {
+        isSelect = select;
+    }
+
+    public String getSongPath() {
+        return songPath;
+    }
+
+    public void setSongPath(String songPath) {
+        this.songPath = songPath;
+    }
+
+    public String getSongMv() {
+        return songMv;
+    }
+
+    public void setSongMv(String songMv) {
+        this.songMv = songMv;
+    }
+
+    public long getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(long createDate) {
+        this.createDate = createDate;
+    }
+
+    public int getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
     }
 }

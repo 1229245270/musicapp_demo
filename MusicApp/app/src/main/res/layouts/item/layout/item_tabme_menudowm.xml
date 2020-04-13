@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@drawable/tablist_item_hover"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:padding="10dp"
     android:layout_height="80dp">
 
-    <ImageView
+    <com.example.musicapp.Module.CircularImageView
+        app:radius="5dp"
+        android:scaleType="fitXY"
         android:id="@+id/itemTabMeDown_ivIcon"
         android:src="@drawable/include_default"
         android:layout_width="60dp"

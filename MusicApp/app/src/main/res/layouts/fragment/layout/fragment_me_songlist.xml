@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="#00000000"
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:foreground="#000000"
+            android:id="@+id/collapsing_toolbar"
+            app:titleEnabled="false"
+            app:expandedTitleGravity="top"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:minHeight="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary">
+            <LinearLayout
+                android:paddingTop="40dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <com.example.musicapp.Module.CircularImageView
+                        android:scaleType="fitXY"
+                        app:radius="5dp"
+                        android:id="@+id/listImage"
+                        android:src="@drawable/include_default"
+                        android:layout_gravity="left|center"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
+                    <LinearLayout
+                        android:gravity="left|center"
+                        android:paddingLeft="10dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="20sp"
+                            android:textColor="#fff"
+                            android:text="我喜欢"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:paddingTop="10dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="16sp"
+                            android:textColor="#fff"
+                            android:text="by 记忆的天空"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                    <TextView
+                        android:gravity="center"
+                        android:drawableTop="@drawable/songlist_share"
+                        android:textColor="#fff"
+                        android:text="分享"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:gravity="center"
+                        android:drawableTop="@drawable/songlist_download"
+                        android:textColor="#fff"
+                        android:text="下载"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:gravity="center"
+                        android:drawableTop="@drawable/songlist_comment"
+                        android:textColor="#fff"
+                        android:text="评论"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:gravity="center"
+                        android:drawableTop="@drawable/songlist_duoxuan"
+                        android:textColor="#fff"
+                        android:text="多选"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.appcompat.widget.Toolbar
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:contentInsetStartWithNavigation="8dp"
+                app:layout_collapseMode="pin"
+                app:contentInsetStart="0dp"
+                android:id="@+id/toolbar"
+                style="toolBarStyle"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#00000000"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/base_toolbar" >
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:drawablePadding="6dp"
+                android:drawableLeft="@drawable/songlist_playall"
+                android:gravity="left|center"
+                android:text="播放全部"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:padding="13dp"
+                android:src="@drawable/songlist_search"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:padding="13dp"
+                android:src="@drawable/songlist_insert"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:padding="13dp"
+                android:src="@drawable/songlist_paixu"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:background="@drawable/songlist_border"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="添加歌曲"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

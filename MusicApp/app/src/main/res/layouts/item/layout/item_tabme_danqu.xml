@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:background="@drawable/tablist_item_hover"
         android:id="@+id/show"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -18,9 +19,10 @@
             android:padding="8dp"
             android:layout_height="40dp"
             android:layout_width="40dp"
-            android:src="@drawable/include_default" />
+            android:src="@drawable/item_danqu_jia" />
         <TextView
             android:id="@+id/number"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1" />
@@ -50,14 +52,14 @@
                 android:text="歌手" />
         </LinearLayout>
         <ImageView
-            android:id="@+id/more"
-            android:src="@drawable/include_default"
+            android:id="@+id/getlike"
+            android:src="@drawable/item_danqu_getlike"
             android:padding="8dp"
             android:layout_width="40dp"
             android:layout_height="40dp" />
         <ImageView
-            android:id="@+id/more2"
-            android:src="@drawable/include_default"
+            android:id="@+id/more"
+            android:src="@drawable/item_danqu_more"
             android:padding="8dp"
             android:layout_width="40dp"
             android:layout_height="40dp" />
@@ -81,6 +83,7 @@
 
         <TextView
             android:id="@+id/fileName"
+            android:textColor="#000"
             android:maxLines="1"
             android:ellipsize="end"
             android:gravity="left|center"
@@ -99,21 +102,22 @@
 
         <ImageView
             android:id="@+id/share"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/getLike"
             app:layout_constraintStart_toEndOf="@+id/getLike"
             app:layout_constraintTop_toTopOf="@+id/getLike"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_share" />
 
         <ImageView
             android:id="@+id/downLoad"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp"
@@ -121,51 +125,49 @@
             app:layout_constraintStart_toEndOf="@+id/share"
             app:layout_constraintTop_toTopOf="@+id/getLike"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_download" />
 
         <ImageView
             android:id="@+id/itemRankSong_ivMv"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/getLike"
             app:layout_constraintStart_toEndOf="@+id/comment"
             app:layout_constraintTop_toTopOf="@+id/getLike"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_mv" />
 
         <ImageView
             android:id="@+id/hideMore"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/getLike"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/itemRankSong_ivMv"
             app:layout_constraintTop_toTopOf="@+id/getLike"
             app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_more" />
 
         <ImageView
             android:id="@+id/getLike"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="12dp"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintStart_toStartOf="@+id/fileName"
             app:layout_constraintTop_toBottomOf="@+id/fileName"
-            app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_getlike" />
 
         <ImageView
             android:id="@+id/comment"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:padding="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp"
@@ -173,8 +175,7 @@
             app:layout_constraintStart_toEndOf="@+id/downLoad"
             app:layout_constraintTop_toTopOf="@+id/getLike"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_percent=".1"
-            app:srcCompat="@drawable/include_default" />
+            app:srcCompat="@drawable/item_danqu_comment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

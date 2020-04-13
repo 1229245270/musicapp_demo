@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingBottom="14dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.musicapp.Module.CircularImageView
+        app:isCircle="true"
+        android:id="@+id/userHeader"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/include_default" />
+
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="记忆的天空"
+        app:layout_constraintStart_toEndOf="@+id/userHeader"
+        app:layout_constraintTop_toTopOf="@+id/userHeader" />
+
+    <TextView
+        android:id="@+id/commentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="12:28回复"
+        app:layout_constraintStart_toEndOf="@+id/userHeader"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/include_default" />
+
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/commentText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userHeader"
+        app:layout_constraintTop_toBottomOf="@+id/userHeader" />
+
+    <TextView
+        android:id="@+id/moreComment"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="14dp"
+        android:text="32回复>"
+        app:layout_constraintStart_toStartOf="@+id/commentText"
+        app:layout_constraintTop_toBottomOf="@+id/commentText" />
+
+    <TextView
+        android:id="@+id/getLike"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:drawableLeft="@drawable/item_all_getlike"
+        android:drawablePadding="4dp"
+        android:text="321"
+        app:layout_constraintEnd_toEndOf="@+id/commentText"
+        app:layout_constraintTop_toTopOf="@+id/moreComment" />
+</androidx.constraintlayout.widget.ConstraintLayout>

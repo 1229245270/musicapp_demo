@@ -52,11 +52,10 @@ public class NumberImageView extends AppCompatImageView {
         super.onDraw(canvas);
         if (num > 0) {
             if(type == COMMENT){
-
                 //初始化半径
                 radius = getWidth() / 6;
                 //初始化字体大小
-                textSize = num < 10 ? radius + 5 : radius;
+                textSize = num < 10 ? radius + 12 : radius + 8;
                 //初始化边距
                 paddingRight = getPaddingRight();
                 paddingTop = getPaddingTop();
@@ -76,7 +75,7 @@ public class NumberImageView extends AppCompatImageView {
                 //初始化半径
                 radius = getWidth() / 6;
                 //初始化字体大小
-                textSize = num < 10 ? radius + 5 : radius;
+                textSize = num < 10 ? radius + 12 : radius + 8;
                 //初始化边距
                 paddingRight = getPaddingRight();
                 paddingTop = getPaddingTop();

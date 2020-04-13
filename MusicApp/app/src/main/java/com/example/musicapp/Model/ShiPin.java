@@ -2,16 +2,16 @@ package com.example.musicapp.Model;
 
 public class ShiPin {
     private String tag;
-    private int movie;
+    private String movie;
     private int time;
     private int listener;
     private String title;
-    private int authorHeader;
+    private String authorHeader;
     private String author;
     private int getLike;
     private int comment;
 
-    public ShiPin(String tag, int movie, int time, int listener, String title, int authorHeader, String author, int getLike, int comment) {
+    public ShiPin(String tag, String movie, int time, int listener, String title, String authorHeader, String author, int getLike, int comment) {
         this.tag = tag;
         this.movie = movie;
         this.time = time;
@@ -31,11 +31,11 @@ public class ShiPin {
         this.tag = tag;
     }
 
-    public int getMovie() {
+    public String getMovie() {
         return movie;
     }
 
-    public void setMovie(int movie) {
+    public void setMovie(String movie) {
         this.movie = movie;
     }
 
@@ -63,11 +63,11 @@ public class ShiPin {
         this.title = title;
     }
 
-    public int getAuthorHeader() {
+    public String getAuthorHeader() {
         return authorHeader;
     }
 
-    public void setAuthorHeader(int authorHeader) {
+    public void setAuthorHeader(String authorHeader) {
         this.authorHeader = authorHeader;
     }
 

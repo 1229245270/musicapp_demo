@@ -3,6 +3,9 @@ package com.example.musicapp.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
@@ -14,14 +17,17 @@ import android.widget.TextView;
 import com.example.musicapp.MainActivity;
 import com.example.musicapp.MusicActivity;
 import com.example.musicapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 
 import static com.example.musicapp.MainActivity.isUserPressThumb;
 import static com.example.musicapp.MusicActivity.isUserPressThumbMusic;
 import static com.example.musicapp.Service.MusicService.isPlayComplete;
+import static com.example.musicapp.Service.MyServiceConn.musicInterface;
 
 public class MusicBroadcast extends BroadcastReceiver {
     public static final int MAINACTIVITY_MSG = 0;
@@ -47,10 +53,14 @@ public class MusicBroadcast extends BroadcastReceiver {
                         int current = intent.getIntExtra("current",0);
                         String songName = intent.getStringExtra("songName");
                         String singer = intent.getStringExtra("singer");
-                        int header = intent.getIntExtra("header", R.drawable.include_default);
+                        String header = intent.getStringExtra("header");
+                        if(header != null && !header.equals("")){
+                            Picasso.get().load(header).error(R.drawable.include_default).into(include_ivMusicHeader);
+                        }else{
+                            Picasso.get().load(R.drawable.include_default).into(include_ivMusicHeader);
+                        }
                         include_seekBar.setMax(duration);
                         include_seekBar.setProgress(current);
-                        include_ivMusicHeader.setImageResource(header);
                         include_tvMusicName.setText(songName);
                         include_tvMusicAuthor.setText(singer);
                         if(isPlayComplete){
@@ -95,6 +105,7 @@ public class MusicBroadcast extends BroadcastReceiver {
                         int current = intent.getIntExtra("current",0);
                         String songName = intent.getStringExtra("songName");
                         String singer = intent.getStringExtra("singer");
+                        String lrc = intent.getStringExtra("lyrics");
                         musicAty_tvSongName.setText(songName);
                         musicAty_tvSinger.setText(singer);
                         musicAty_seekBar.setMax(duration);
@@ -106,6 +117,9 @@ public class MusicBroadcast extends BroadcastReceiver {
                         }else{
                             musicAty_ivPlayShow.setImageResource(R.drawable.music_pause);
                         }
+/*
+                        MusicService musicService = new MusicService();
+                        lrcView.setLrc(lrc).setPlayer(musicService.getMediaPlayer()).draw();*/
                     }
                 });
                 break;
@@ -133,6 +147,14 @@ public class MusicBroadcast extends BroadcastReceiver {
                 break;
         }
 
+    }
+    private Bitmap getBitmapFromByte(byte[] temp){
+        if(temp != null){
+            Bitmap bitmap = BitmapFactory.decodeByteArray(temp, 0, temp.length);
+            return bitmap;
+        }else{
+            return null;
+        }
     }
     private String toTime(int time){
         time = time/1000;

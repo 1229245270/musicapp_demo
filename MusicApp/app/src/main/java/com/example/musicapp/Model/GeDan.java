@@ -2,14 +2,14 @@ package com.example.musicapp.Model;
 
 public class GeDan {
     private String tag;
-    private int image;
+    private String image;
     private int listener;
     private String songListName;
     private String songListIntro;
     private String author;
     private int comment;
 
-    public GeDan(String tag, int image, int listener, String songListName, String songListIntro, String author, int comment) {
+    public GeDan(String tag, String image, int listener, String songListName, String songListIntro, String author, int comment) {
         this.tag = tag;
         this.image = image;
         this.listener = listener;
@@ -27,11 +27,11 @@ public class GeDan {
         this.tag = tag;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

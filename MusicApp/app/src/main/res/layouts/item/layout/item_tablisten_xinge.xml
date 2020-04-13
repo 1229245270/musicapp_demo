@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
+    android:background="@drawable/tablist_item_hover"
     android:layout_width="match_parent"
     android:gravity="center"
     android:padding="10dp"
@@ -38,21 +39,22 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <ImageView
+        android:visibility="gone"
         android:id="@+id/love"
         android:padding="8dp"
-        android:src="@drawable/include_default"
+        android:src="@drawable/item_all_love"
         android:layout_width="40dp"
         android:layout_height="40dp" />
     <com.example.musicapp.Module.NumberImageView
         android:id="@+id/comment"
         android:padding="8dp"
-        android:src="@drawable/include_default"
+        android:src="@drawable/item_all_pinlun"
         android:layout_width="40dp"
         android:layout_height="40dp" />
     <ImageView
         android:id="@+id/more"
         android:padding="8dp"
-        android:src="@drawable/include_default"
+        android:src="@drawable/item_all_more"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 </LinearLayout>

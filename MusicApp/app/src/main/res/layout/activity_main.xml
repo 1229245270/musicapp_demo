@@ -53,7 +53,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:src="@drawable/include_default"
+                    android:src="@drawable/drawlayout_yuyin_line"
                     android:layout_width="24dp"
                     android:layout_height="24dp" />
                 <TextView
@@ -72,13 +72,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:src="@drawable/include_default"
+                    android:src="@drawable/drawlayout_gongju"
                     android:layout_width="24dp"
                     android:layout_height="24dp" />
                 <TextView
                     android:textColor="#000"
                     android:paddingLeft="10dp"
-                    android:text="听歌识曲"
+                    android:text="音乐工具"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

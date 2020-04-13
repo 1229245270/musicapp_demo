@@ -91,7 +91,10 @@ public class DrawableAdapter extends BaseAdapter {
                     }
                     viewHolder2.hint.setText(drawableBottom.getHint());
                     if(drawableBottom.getHintImage() != 0){
+                        viewHolder2.hintImage.setVisibility(View.VISIBLE);
                         viewHolder2.hintImage.setImageResource(drawableBottom.getHintImage());
+                    }else{
+                        viewHolder2.hintImage.setVisibility(View.GONE);
                     }
                 }
         }

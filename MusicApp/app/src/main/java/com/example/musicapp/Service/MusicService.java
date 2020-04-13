@@ -6,6 +6,7 @@ import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -18,8 +19,14 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.example.musicapp.DateBase.UsersTable;
+import com.example.musicapp.Fragment.TabMeDanQu;
 import com.example.musicapp.MainActivity;
+import com.example.musicapp.Model.Song;
 import com.example.musicapp.R;
+import com.example.musicapp.Utils.SongListUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 import java.util.Random;
@@ -30,21 +37,22 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import static com.example.musicapp.MusicActivity.isRunable;
+import static com.example.musicapp.MusicActivity.isRunMusicActivity;
 import static com.example.musicapp.Service.MusicBroadcast.MAINACTIVITY_MSG;
 import static com.example.musicapp.Service.MusicBroadcast.MAINACTIVITY_SEEKBAR;
 import static com.example.musicapp.Service.MusicBroadcast.MUSICACTIVITY_MSG;
 import static com.example.musicapp.Service.MusicBroadcast.MUSICACTIVITY_SEEKBAR;
+import static com.example.musicapp.Service.MyServiceConn.musicInterface;
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";
-    private MediaPlayer mediaPlayer;
+    public static MediaPlayer mediaPlayer;
     private AudioManager audioManager;
     private Timer timer;
-    private String hash;
     public static Boolean isPlayComplete = true;//判断播放是否结束
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -116,6 +124,16 @@ public class MusicService extends Service {
         }
 
         @Override
+        public void nextSong() {
+            MusicService.this.nextSong();
+        }
+
+        @Override
+        public void upSong() {
+            MusicService.this.upSong();
+        }
+
+        @Override
         public void pause() {
             MusicService.this.pause();
         }
@@ -154,7 +172,9 @@ public class MusicService extends Service {
 
     //播放音乐
     public void play(final Intent intent, String filePath){
-        mediaPlayer.reset();//重置
+        if(mediaPlayer != null){
+            mediaPlayer.reset();//重置
+        }
         if(requestFocus()){
             try{
                 mediaPlayer.setDataSource(filePath);
@@ -174,9 +194,19 @@ public class MusicService extends Service {
                     }
                 });
             }catch (Exception e){
+                Toast.makeText(getApplicationContext(),"未找到文件路径，请重新扫描",Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }
+    }
+    //下一首
+    public void nextSong(){
+        SongListUtil.nextSong(getApplicationContext());
+
+    }
+    //上一首
+    public void upSong(){
+        SongListUtil.upSong(getApplicationContext());
     }
 
     //继续播放
@@ -226,9 +256,10 @@ public class MusicService extends Service {
                 Intent intent = new Intent(getApplicationContext(),MusicBroadcast.class);
                 intent.setAction("com.example.musicapp.Service.MusicBroadcast");
                 intent.putExtra("current",getCurrentPosition());
+                intent.putExtra("duration",getDuration());
                 if(mediaPlayer.isPlaying()){
                     intent.putExtra("isPlay",true);
-                    if(isRunable){
+                    if(isRunMusicActivity){
                         intent.putExtra("type",MUSICACTIVITY_SEEKBAR);
                         sendBroadcast(intent);
                     }
@@ -236,10 +267,9 @@ public class MusicService extends Service {
                     sendBroadcast(intent);
                     editor.putInt("current",getCurrentPosition());
                     editor.commit();
-                }
-                else{
+                }else{
                     intent.putExtra("isPlay",false);
-                    if(isRunable){
+                    if(isRunMusicActivity){
                         intent.putExtra("type",MUSICACTIVITY_SEEKBAR);
                         sendBroadcast(intent);
                     }
@@ -248,35 +278,60 @@ public class MusicService extends Service {
                     editor.putInt("current",getCurrentPosition());
                     editor.commit();
                     Log.v(TAG,"结束TimeTask");
-                    timer.cancel();
+                    this.cancel();
+                    //播放完成后自动下一曲
+                    if(isPlayComplete && getCurrentPosition() >= getDuration() - 500 && getDuration() > 0 && getCurrentPosition() > 0){
+                        nextSong();
+                    }
                 }
             }//开始计时任务后的200毫秒后第一次执行run方法，以后每500毫秒执行一次
         },200,500);
+
     }
 
     //发送播放信息
     public void SeekPlayMessage(Intent intent){
         Intent intent1 = new Intent(getApplicationContext(),MusicBroadcast.class);
         intent1.putExtra("isPlay",true);
-        intent1.putExtra("songName",intent.getStringExtra("songName"));
-        intent1.putExtra("singer",intent.getStringExtra("singer"));
+        String songName = intent.getStringExtra("songName");
+        String singer = intent.getStringExtra("singer");
+        String header = intent.getStringExtra("header");
+        String fileName = intent.getStringExtra("fileName");
+        String lyrics = intent.getStringExtra("lyrics");
+        String mv = intent.getStringExtra("mv");
+        Long createDate = intent.getLongExtra("createDate",0);
+
+        intent1.putExtra("songName",songName);
+        intent1.putExtra("singer",singer);
+        intent1.putExtra("fileName",fileName);
         intent1.putExtra("duration",getDuration());
         intent1.putExtra("current",getCurrentPosition());
-        intent1.putExtra("songId",intent.getIntExtra("songId",0));
+        //intent1.putExtra("songId",intent.getIntExtra("songId",0));
         intent1.setAction("com.example.musicapp.Service.MusicBroadcast");
-        if(isRunable){
+        //音乐页面
+        if(isRunMusicActivity){
+            intent1.putExtra("lyrics",lyrics);
+            intent1.putExtra("mv",mv);
             intent1.putExtra("type",MUSICACTIVITY_MSG);
             sendBroadcast(intent1);
         }
-        intent1.putExtra("header",intent.getIntExtra("header", R.drawable.include_default));
+        //状态栏
+        intent1.putExtra("header",header);
         intent1.putExtra("type",MAINACTIVITY_MSG);
         sendBroadcast(intent1);
-        editor.putString("songName",intent.getStringExtra("songName"));
-        editor.putString("singer",intent.getStringExtra("singer"));
+
+        //设置临时歌曲信息
+        editor.putString("fileName",fileName);
+        editor.putString("songName",songName);
+        editor.putString("singer",singer);
         editor.putInt("duration",getDuration());
-        editor.putInt("songId",intent.getIntExtra("songId",0));
         editor.putInt("current",getCurrentPosition());
+        editor.putString("header",header);
+        editor.putString("lyrics",lyrics);
+        editor.putString("mv",mv);
+        editor.putLong("createDate",createDate);
         editor.commit();
+        EventBus.getDefault().post("");
     }
     //获取播放状态
     public boolean isPlaying(){
@@ -310,6 +365,8 @@ public class MusicService extends Service {
     }
     public interface MusicInterface{
         void play(String filePath);
+        void nextSong();
+        void upSong();
         void pause();
         void continuePlay();
         void seekTo(int progress);

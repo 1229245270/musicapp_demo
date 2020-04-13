@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.musicapp.Model.TabMeMenuDown;
 import com.example.musicapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -31,8 +33,9 @@ public class TabMeMenu extends FrameLayout {
     private boolean itemTabMe_isSelect;
     private RecyclerView itemTabMe_rvShow;
     private View mView;
-    private List<Object> objectList;
+    private List<TabMeMenuDown> tabMeMenuDowns;
     private ItemTabMeMenuAdapter adapter;
+    private OnItemClickListen onItemClickListen;
 
     //设置title文字
     public String getTitleText() {
@@ -45,15 +48,27 @@ public class TabMeMenu extends FrameLayout {
         }
     }
 
-    public List<Object> getObjectList() {
-        return objectList;
+    public void setOnClick(OnItemClickListen onItemClickListen){
+        this.onItemClickListen = onItemClickListen;
     }
-    public void setAdapter(List<Object> objectList) {
-        this.objectList = objectList;
-        adapter = new ItemTabMeMenuAdapter(mContext,objectList);
+    public interface OnItemClickListen{
+        void onItemClick(TabMeMenuDown tabMeMenuDown,int position);
+    }
+
+    public void setTabMeMenuDowns(List<TabMeMenuDown> tabMeMenuDowns) {
+        this.tabMeMenuDowns = tabMeMenuDowns;
+    }
+    public List<TabMeMenuDown> getTabMeMenuDowns() {
+        return tabMeMenuDowns;
+    }
+    public void setAdapter(List<TabMeMenuDown> tabMeMenuDowns) {
+        this.tabMeMenuDowns = tabMeMenuDowns;
+        adapter = new ItemTabMeMenuAdapter(mContext, this.tabMeMenuDowns);
         itemTabMe_rvShow.setAdapter(adapter);
-        itemTabMe_rvShow.setLayoutManager(new AutoLayoutManage(mContext,LinearLayoutManager.VERTICAL,false));
+        itemTabMe_rvShow.setLayoutManager(new AutoLayoutManage(mContext, LinearLayoutManager.VERTICAL, false));
     }
+
+
     public ItemTabMeMenuAdapter getAdapter(){
         return adapter;
     }
@@ -122,14 +137,14 @@ public class TabMeMenu extends FrameLayout {
     }
 
 
-    public static class ItemTabMeMenuAdapter extends RecyclerView.Adapter<ItemTabMeMenuAdapter.MyViewHolder>{
+    public class ItemTabMeMenuAdapter extends RecyclerView.Adapter<ItemTabMeMenuAdapter.MyViewHolder>{
         private LayoutInflater inflater;
-        private List<Object> objects;
+        private List<TabMeMenuDown> tabMeMenuDowns;
         private Context context;
 
 
-        public ItemTabMeMenuAdapter(Context context,List<Object> objects){
-            this.objects = objects;
+        public ItemTabMeMenuAdapter(Context context,List<TabMeMenuDown> tabMeMenuDowns){
+            this.tabMeMenuDowns = tabMeMenuDowns;
             this.context = context;
             inflater = LayoutInflater.from(context);
         }
@@ -143,9 +158,17 @@ public class TabMeMenu extends FrameLayout {
 
         @Override
         public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-            TabMeMenuDown model = (TabMeMenuDown) objects.get(position);
+            TabMeMenuDown model = tabMeMenuDowns.get(position);
             if(model != null){
-                holder.itemTabMeDown_ivIcon.setImageResource(model.getIcon());
+                Object img = model.getIcon();
+                Log.v("model",model.toString());
+                if(img instanceof String){
+                    if(!model.getIcon().equals("")){
+                        Picasso.get().load((String) model.getIcon()).error(R.drawable.include_default).into(holder.itemTabMeDown_ivIcon);
+                    }
+                }else if(img instanceof Integer){
+                    holder.itemTabMeDown_ivIcon.setImageResource((Integer) img);
+                }
                 holder.itemTabMeDown_tvName.setText(model.getName());
                 holder.itemTabMeDown_tvSongNum.setText(String.format(context.getString(R.string.song_num),model.getSongNum()));
                 if(!model.getHint().equals("")){
@@ -160,12 +183,18 @@ public class TabMeMenu extends FrameLayout {
                 }else{
                     holder.itemTabMeDown_tvSongDownNum.setVisibility(GONE);
                 }
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onItemClickListen.onItemClick(model,position);
+                    }
+                });
             }
         }
 
         @Override
         public int getItemCount() {
-            return objects.size();
+            return tabMeMenuDowns.size();
         }
 
         class MyViewHolder extends RecyclerView.ViewHolder {
